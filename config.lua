@@ -18,7 +18,7 @@ lvim.format_on_save = {
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
--- keymappings <https://www.lunarvim.org/docs/configuration/keybindings>
+-- KEY MAPPING <https://www.lunarvim.org/docs/configuration/keybindings>
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
@@ -26,6 +26,16 @@ lvim.keys.insert_mode["jj"] = "<esc>"
 
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+
+-- Window picker
+local picker = require('window-picker')
+
+vim.keymap.set("n", ",w", function()
+  local picked_window_id = picker.pick_window({
+    include_current_win = false
+  }) or vim.api.nvim_get_current_win()
+  vim.api.nvim_set_current_win(picked_window_id)
+end, { desc = "Pick a window" })
 
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
@@ -39,6 +49,17 @@ lvim.builtin.which_key.mappings["r"] = {
   w = {
     "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
     "Open Spectre with current word"
+  }
+}
+lvim.builtin.which_key.mappings["f"] = {
+  name = "+File",
+  e = {
+    "<cmd>NvimTreeFindFile<CR>",
+    "Find file in explorer"
+  },
+  f = {
+    "<cmd>Telescope find_files<CR>",
+    "Find file"
   }
 }
 
@@ -189,6 +210,34 @@ lvim.plugins = {
       require("nvim-ts-autotag").setup()
     end,
   },
+  {
+    "andymass/vim-matchup",
+    event = "CursorMoved",
+    config = function()
+      vim.g.matchup_matchparen_offscreen = { method = "popup" }
+    end,
+  },
+  {
+    "s1n7ax/nvim-window-picker",
+    tag = "1.*",
+    config = function()
+      require("window-picker").setup({
+        autoselect_one = true,
+        include_current = false,
+        filter_rules = {
+          -- filter using buffer options
+          bo = {
+            -- if the file type is one of following, the window will be ignored
+            filetype = { "neo-tree", "neo-tree-popup", "notify", "quickfix" },
+
+            -- if the buffer type is one of following, the window will be ignored
+            buftype = { "terminal" },
+          },
+        },
+        other_win_hl_color = "#e35e4f",
+      })
+    end,
+  }
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
