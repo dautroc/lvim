@@ -66,6 +66,22 @@ lvim.builtin.which_key.mappings["f"] = {
     "Recent files"
   }
 }
+lvim.builtin.which_key.mappings["gy"] = {
+  "<cmd>lua require('gitlinker').get_buf_range_url('n')",
+  "Open in browser"
+}
+lvim.builtin.which_key.mappings["t"] = {
+  name = "+Terminal",
+  h = {
+    "<cmd>ToggleTerm size=20 dir=. direction=horizontal<CR>",
+    "Horizontal"
+  },
+  f = {
+    "<cmd>ToggleTerm dir=. direction=float<CR>",
+    "Float"
+  },
+}
+
 -- -- Change theme settings
 -- lvim.colorscheme = "lunar"
 
