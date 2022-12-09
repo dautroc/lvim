@@ -135,6 +135,31 @@ lvim.plugins = {
     --  vim.o.timeoutlen = 500
     -- end
   },
+  {
+    "tpope/vim-bundler",
+    cmd = { "Bundler", "Bopen", "Bsplit", "Btabedit" }
+  },
+  {
+    "tpope/vim-rails",
+    cmd = {
+      "Eview",
+      "Econtroller",
+      "Emodel",
+      "Smodel",
+      "Sview",
+      "Scontroller",
+      "Vmodel",
+      "Vview",
+      "Vcontroller",
+      "Tmodel",
+      "Tview",
+      "Tcontroller",
+      "Rails",
+      "Generate",
+      "Runner",
+      "Extract"
+    }
+  },
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
