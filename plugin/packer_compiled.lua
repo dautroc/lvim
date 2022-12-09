@@ -100,6 +100,14 @@ _G.packer_plugins = {
     path = "/Users/eh/.local/share/lunarvim/site/pack/packer/start/bigfile.nvim",
     url = "https://github.com/lunarvim/bigfile.nvim"
   },
+  ["bracey.vim"] = {
+    commands = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
+    loaded = false,
+    needs_bufread = false,
+    only_cond = false,
+    path = "/Users/eh/.local/share/lunarvim/site/pack/packer/opt/bracey.vim",
+    url = "https://github.com/turbio/bracey.vim"
+  },
   ["bufferline.nvim"] = {
     config = { "\27LJ\2\nB\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\25lvim.core.bufferline\frequire\0" },
     loaded = false,
@@ -488,6 +496,10 @@ pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Tcontroller lua re
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Generate lua require("packer.load")({'vim-rails'}, { cmd = "Generate", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Runner lua require("packer.load")({'vim-rails'}, { cmd = "Runner", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Extract lua require("packer.load")({'vim-rails'}, { cmd = "Extract", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file BraceyEval lua require("packer.load")({'bracey.vim'}, { cmd = "BraceyEval", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file BraceyReload lua require("packer.load")({'bracey.vim'}, { cmd = "BraceyReload", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file BracyStop lua require("packer.load")({'bracey.vim'}, { cmd = "BracyStop", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
+pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Bracey lua require("packer.load")({'bracey.vim'}, { cmd = "Bracey", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file Rails lua require("packer.load")({'vim-rails'}, { cmd = "Rails", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
 time([[Defining lazy-load commands]], false)
 
@@ -495,10 +507,10 @@ vim.cmd [[augroup packer_load_aucmds]]
 vim.cmd [[au!]]
   -- Event lazy-loads
 time([[Defining lazy-load event autocommands]], true)
+vim.cmd [[au BufReadPost * ++once lua require("packer.load")({'nvim-ts-context-commentstring'}, { event = "BufReadPost *" }, _G.packer_plugins)]]
 vim.cmd [[au BufWinEnter * ++once lua require("packer.load")({'which-key.nvim', 'bufferline.nvim', 'toggleterm.nvim'}, { event = "BufWinEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au InsertEnter * ++once lua require("packer.load")({'cmp-tabnine'}, { event = "InsertEnter *" }, _G.packer_plugins)]]
 vim.cmd [[au BufRead * ++once lua require("packer.load")({'Comment.nvim', 'hop.nvim', 'gitsigns.nvim'}, { event = "BufRead *" }, _G.packer_plugins)]]
-vim.cmd [[au BufReadPost * ++once lua require("packer.load")({'nvim-ts-context-commentstring'}, { event = "BufReadPost *" }, _G.packer_plugins)]]
 time([[Defining lazy-load event autocommands]], false)
 vim.cmd("augroup END")
 

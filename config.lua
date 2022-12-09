@@ -160,6 +160,11 @@ lvim.plugins = {
       "Extract"
     }
   },
+  {
+    "turbio/bracey.vim",
+    cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
+    run = "npm install --prefix server",
+  },
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
