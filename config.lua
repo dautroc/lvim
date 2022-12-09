@@ -24,12 +24,23 @@ lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.insert_mode["jj"] = "<esc>"
 
--- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
--- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
--- -- Use which-key to add extra bindings with the leader-key prefix
+-- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
--- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["r"] = {
+  name = "+Replace",
+  s = {
+    "<cmd>lua require('spectre').open()<CR>",
+    "Open Spectre"
+  },
+  w = {
+    "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
+    "Open Spectre with current word"
+  }
+}
 
 -- -- Change theme settings
 -- lvim.colorscheme = "lunar"
@@ -164,6 +175,19 @@ lvim.plugins = {
     "turbio/bracey.vim",
     cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
     run = "npm install --prefix server",
+  },
+  {
+    "windwp/nvim-spectre",
+    event = "BufRead",
+    config = function()
+      require("spectre").setup()
+    end,
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
   },
 }
 
