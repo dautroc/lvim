@@ -42,13 +42,13 @@ end, { desc = "Pick a window" })
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["r"] = {
   name = "+Replace",
-  s = {
+  r = {
     "<cmd>lua require('spectre').open()<CR>",
-    "Open Spectre"
+    "Replace"
   },
   w = {
     "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
-    "Open Spectre with current word"
+    "Replace with current word"
   }
 }
 lvim.builtin.which_key.mappings["f"] = {
@@ -60,6 +60,10 @@ lvim.builtin.which_key.mappings["f"] = {
   f = {
     "<cmd>Telescope find_files<CR>",
     "Find file"
+  },
+  r = {
+    "<cmd>Telescope oldfiles<CR>",
+    "Recent files"
   }
 }
 -- -- Change theme settings
@@ -256,6 +260,14 @@ lvim.plugins = {
       }
     end,
     requires = "nvim-lua/plenary.nvim",
+  },
+  {
+    -- You must install glow globally
+    -- https://github.com/charmbracelet/glow
+    -- yay -S glow
+    "npxbr/glow.nvim",
+    ft = { "markdown" }
+    -- run = "yay -S glow"
   },
 }
 
