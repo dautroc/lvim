@@ -325,6 +325,9 @@ lvim.plugins = {
     "felipec/vim-sanegx",
     event = "BufRead",
   },
+  {
+    "wakatime/vim-wakatime"
+  }
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
