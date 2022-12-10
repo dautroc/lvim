@@ -320,6 +320,11 @@ lvim.plugins = {
       vim.api.nvim_command("augroup END")
     end
   },
+  { "tpope/vim-repeat" },
+  {
+    "felipec/vim-sanegx",
+    event = "BufRead",
+  },
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
