@@ -29,10 +29,10 @@ lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
 -- Move line
-lvim.keys.visual_mode["<C-j>"] = ":m '>+1<CR>gv=gv"
-lvim.keys.visual_mode["<C-k>"] = ":m '<-2<CR>gv=gv"
-lvim.keys.normal_mode["<C-j>"] = ":m .+1<CR>=="
-lvim.keys.normal_mode["<C-k>"] = ":m .-2<CR>=="
+-- lvim.keys.visual_mode["<C-j>"] = ":m '>+1<CR>gv=gv"
+-- lvim.keys.visual_mode["<C-k>"] = ":m '<-2<CR>gv=gv"
+-- lvim.keys.normal_mode["<C-j>"] = ":m .+1<CR>=="
+-- lvim.keys.normal_mode["<C-k>"] = ":m .-2<CR>=="
 
 -- Window picker
 local picker = require('window-picker')
