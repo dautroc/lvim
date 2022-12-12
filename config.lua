@@ -64,6 +64,10 @@ lvim.builtin.which_key.mappings["f"] = {
   r = {
     "<cmd>Telescope oldfiles<CR>",
     "Recent files"
+  },
+  p = {
+    "<cmd>let @+=expand('%')<CR>",
+    "Copy file path"
   }
 }
 lvim.builtin.which_key.mappings["gy"] = {
