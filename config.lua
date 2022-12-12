@@ -21,11 +21,18 @@ lvim.format_on_save = {
 -- KEY MAPPING <https://www.lunarvim.org/docs/configuration/keybindings>
 lvim.leader = "space"
 -- add your own keymapping
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
+lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
 lvim.keys.insert_mode["jj"] = "<esc>"
+lvim.keys.normal_mode["<C-p>"] = "<cmd>lua require('telescope.builtin').find_files()<CR>"
 
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+
+-- Move line
+lvim.keys.visual_mode["<C-j>"] = ":m '>+1<CR>gv=gv"
+lvim.keys.visual_mode["<C-k>"] = ":m '<-2<CR>gv=gv"
+lvim.keys.normal_mode["<C-j>"] = ":m .+1<CR>=="
+lvim.keys.normal_mode["<C-k>"] = ":m .-2<CR>=="
 
 -- Window picker
 local picker = require('window-picker')
