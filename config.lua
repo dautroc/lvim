@@ -319,6 +319,9 @@ lvim.plugins = {
   },
   {
     "wakatime/vim-wakatime"
+  },
+  {
+    "tpope/vim-projectionist"
   }
 }
 
