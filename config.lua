@@ -205,27 +205,6 @@ lvim.plugins = {
     cmd = { "Bundler", "Bopen", "Bsplit", "Btabedit" }
   },
   {
-    "tpope/vim-rails",
-    cmd = {
-      "Eview",
-      "Econtroller",
-      "Emodel",
-      "Smodel",
-      "Sview",
-      "Scontroller",
-      "Vmodel",
-      "Vview",
-      "Vcontroller",
-      "Tmodel",
-      "Tview",
-      "Tcontroller",
-      "Rails",
-      "Generate",
-      "Runner",
-      "Extract"
-    }
-  },
-  {
     "turbio/bracey.vim",
     cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
     run = "npm install --prefix server",
