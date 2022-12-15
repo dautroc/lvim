@@ -15,6 +15,7 @@ lvim.format_on_save = {
   pattern = "*.lua",
   timeout = 1000,
 }
+
 -- to disable icons and use a minimalist setup, uncomment the following
 -- lvim.use_icons = false
 
@@ -84,14 +85,14 @@ lvim.builtin.which_key.mappings["gy"] = {
   "Open in browser"
 }
 lvim.builtin.which_key.mappings["t"] = {
-  name = "+Terminal",
-  h = {
-    "<cmd>ToggleTerm size=20 dir=. direction=horizontal<CR>",
-    "Horizontal"
+  name = "+Tests",
+  n    = {
+    "<cmd>:TestNearest<CR>",
+    "Test Nearest"
   },
-  f = {
-    "<cmd>ToggleTerm dir=. direction=float<CR>",
-    "Float"
+  t    = {
+    "<cmd>:TestFile<CR>",
+    "Test File"
   },
 }
 
@@ -322,6 +323,10 @@ lvim.plugins = {
   },
   {
     "tpope/vim-projectionist"
+  },
+  {
+    "vim-test/vim-test",
+    requires = "preservim/vimux"
   }
 }
 
@@ -333,3 +338,4 @@ lvim.plugins = {
 --     require("nvim-treesitter.highlight").attach(0, "bash")
 --   end,
 -- })
+vim.g['test#strategy'] = 'vimux'
