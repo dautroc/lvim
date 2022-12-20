@@ -26,8 +26,8 @@ lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
 lvim.keys.insert_mode["jj"] = "<esc>"
 lvim.keys.normal_mode["<C-p>"] = "<cmd>lua require('telescope.builtin').find_files()<CR>"
 
-lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
-lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["tk"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["tj"] = ":BufferLineCyclePrev<CR>"
 
 lvim.keys.normal_mode["#"] = "*"
 
@@ -109,6 +109,7 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
 lvim.builtin.treesitter.rainbow.enable = true
+lvim.builtin.bufferline.options.mode = "tabs"
 
 -- lvim.builtin.treesitter.ignore_install = { "haskell" }
 
@@ -327,6 +328,9 @@ lvim.plugins = {
   {
     "vim-test/vim-test",
     requires = "preservim/vimux"
+  },
+  {
+    "tiagovla/scope.nvim"
   }
 }
 
