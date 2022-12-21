@@ -99,7 +99,7 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.bufferline.options.mode = "tabs" -- set to "tabs" to only show tabpages instead
 
 -- Custom telescope
-lvim.builtin.telescope.lvim.builtin.telescope.on_config_done = function(telescope)
+lvim.builtin.telescope.on_config_done = function(telescope)
   local actions = require("telescope.actions")
 
   telescope.setup({
