@@ -24,7 +24,7 @@ lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
 lvim.keys.insert_mode["jj"] = "<esc>"
-lvim.keys.normal_mode["<C-p>"] = "<cmd>lua require('telescope.builtin').find_files()<CR>"
+lvim.keys.normal_mode["<C-p>"] = "<cmd>lua require('telescope.builtin').find_files({hidden=false})<CR>"
 
 lvim.keys.normal_mode["tk"] = ":tabnext<CR>"
 lvim.keys.normal_mode["tj"] = ":tabprev<CR>"
@@ -69,7 +69,7 @@ lvim.builtin.which_key.mappings["f"] = {
     "Find file in explorer"
   },
   f = {
-    "<cmd>Telescope find_files<CR>",
+    "<cmd>lua require('telescope.builtin').find_files({hidden=false})<CR>",
     "Find file"
   },
   r = {
