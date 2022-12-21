@@ -24,7 +24,7 @@ lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
 lvim.keys.insert_mode["jj"] = "<esc>"
-lvim.keys.normal_mode["<C-p>"] = "<cmd>lua require('telescope.builtin').find_files({hidden=false})<CR>"
+lvim.keys.normal_mode["<C-p>"] = "<cmd>Telescope find_files<CR>"
 
 lvim.keys.normal_mode["tk"] = ":tabnext<CR>"
 lvim.keys.normal_mode["tj"] = ":tabprev<CR>"
@@ -69,7 +69,7 @@ lvim.builtin.which_key.mappings["f"] = {
     "Find file in explorer"
   },
   f = {
-    "<cmd>lua require('telescope.builtin').find_files({hidden=false})<CR>",
+    "<cmd>Telescope find_files<CR>",
     "Find file"
   },
   r = {
@@ -111,6 +111,7 @@ lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 lvim.builtin.treesitter.auto_install = true
 lvim.builtin.treesitter.rainbow.enable = true
 lvim.builtin.bufferline.options.mode = "tabs"
+lvim.builtin.telescope.pickers.find_files.find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" }
 
 -- lvim.builtin.treesitter.ignore_install = { "haskell" }
 
