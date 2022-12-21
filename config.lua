@@ -38,16 +38,6 @@ lvim.keys.normal_mode["#"] = "*"
 -- lvim.keys.normal_mode["<C-j>"] = ":m .+1<CR>=="
 -- lvim.keys.normal_mode["<C-k>"] = ":m .-2<CR>=="
 
--- Window picker
-local picker = require('window-picker')
-
-vim.keymap.set("n", ",w", function()
-  local picked_window_id = picker.pick_window({
-    include_current_win = false
-  }) or vim.api.nvim_get_current_win()
-  vim.api.nvim_set_current_win(picked_window_id)
-end, { desc = "Pick a window" })
-
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
@@ -106,12 +96,33 @@ lvim.builtin.alpha.mode = "dashboard"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
+lvim.builtin.bufferline.options.mode = "tabs" -- set to "tabs" to only show tabpages instead
+
+-- Custom telescope
+lvim.builtin.telescope.lvim.builtin.telescope.on_config_done = function(telescope)
+  local actions = require("telescope.actions")
+
+  telescope.setup({
+    defaults = {
+      mappings = {
+        i = {
+          ["<C-u>"] = false, -- clear prompt
+          ["<esc>"] = actions.close, -- quit insert mode
+        },
+      },
+      pickers = {
+        find_files = {
+          find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" }, -- hide git branch
+        }
+      }
+    }
+  })
+  -- any other extensions loading
+end
 
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
 lvim.builtin.treesitter.rainbow.enable = true
-lvim.builtin.bufferline.options.mode = "tabs"
-lvim.builtin.telescope.pickers.find_files.find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" }
 
 -- lvim.builtin.treesitter.ignore_install = { "haskell" }
 
@@ -231,27 +242,6 @@ lvim.plugins = {
     event = "CursorMoved",
     config = function()
       vim.g.matchup_matchparen_offscreen = { method = "popup" }
-    end,
-  },
-  {
-    "s1n7ax/nvim-window-picker",
-    tag = "1.*",
-    config = function()
-      require("window-picker").setup({
-        autoselect_one = true,
-        include_current = false,
-        filter_rules = {
-          -- filter using buffer options
-          bo = {
-            -- if the file type is one of following, the window will be ignored
-            filetype = { "neo-tree", "neo-tree-popup", "notify", "quickfix" },
-
-            -- if the buffer type is one of following, the window will be ignored
-            buftype = { "terminal" },
-          },
-        },
-        other_win_hl_color = "#e35e4f",
-      })
     end,
   },
   {
