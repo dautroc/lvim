@@ -77,13 +77,19 @@ lvim.builtin.which_key.mappings["gy"] = {
 }
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Tests",
-  n    = {
+  n = {
     "<cmd>:TestNearest<CR>",
     "Test Nearest"
   },
-  t    = {
+  t = {
     "<cmd>:TestFile<CR>",
     "Test File"
+  },
+}
+lvim.builtin.which_key.mappings["s"] = {
+  t = {
+    "<cmd>lua require('telescope.builtin').grep_string({ search = '' })<CR>",
+    "Text"
   },
 }
 
@@ -114,10 +120,21 @@ lvim.builtin.telescope.on_config_done = function(telescope)
         find_files = {
           find_command = { "rg", "--files", "--hidden", "--glob", "!**/.git/*" }, -- hide git branch
         }
-      }
-    }
+      },
+    },
+    -- extensions = {
+    --   fzf = {
+    --     fuzzy = true, -- false will only do exact matching
+    --     override_generic_sorter = true, -- override the generic sorter
+    --     override_file_sorter = true, -- override the file sorter
+    --     case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+    --     -- the default case_mode is "smart_case"
+    --   }
+    -- }
   })
   -- any other extensions loading
+  telescope.load_extension('fzf')
+  -- pcall(telescope.load_extension, "fzf")
 end
 
 -- Automatically install missing parsers when entering buffer
@@ -307,23 +324,12 @@ lvim.plugins = {
     end
   },
   { "tpope/vim-repeat" },
-  {
-    "felipec/vim-sanegx",
-    event = "BufRead",
-  },
-  {
-    "wakatime/vim-wakatime"
-  },
-  {
-    "tpope/vim-projectionist"
-  },
-  {
-    "vim-test/vim-test",
-    requires = "preservim/vimux"
-  },
-  {
-    "tiagovla/scope.nvim"
-  }
+  { "felipec/vim-sanegx", event = "BufRead", },
+  { "wakatime/vim-wakatime" },
+  { "tpope/vim-projectionist" },
+  { "vim-test/vim-test", requires = "preservim/vimux" },
+  { "tiagovla/scope.nvim" },
+  { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
