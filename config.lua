@@ -114,6 +114,8 @@ lvim.builtin.telescope.on_config_done = function(telescope)
         i = {
           ["<C-u>"] = false, -- clear prompt
           ["<esc>"] = actions.close, -- quit insert mode
+          ["<C-j>"] = actions.move_selection_next,
+          ["<C-k>"] = actions.move_selection_previous,
         },
       },
       pickers = {
