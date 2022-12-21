@@ -26,8 +26,8 @@ lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
 lvim.keys.insert_mode["jj"] = "<esc>"
 lvim.keys.normal_mode["<C-p>"] = "<cmd>lua require('telescope.builtin').find_files()<CR>"
 
-lvim.keys.normal_mode["tk"] = ":BufferLineCycleNext<CR>"
-lvim.keys.normal_mode["tj"] = ":BufferLineCyclePrev<CR>"
+lvim.keys.normal_mode["tk"] = ":tabnext<CR>"
+lvim.keys.normal_mode["tj"] = ":tabprev<CR>"
 lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
 
 lvim.keys.normal_mode["#"] = "*"
