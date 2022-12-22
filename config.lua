@@ -86,7 +86,7 @@ lvim.builtin.which_key.mappings["t"] = {
     "Test File"
   },
 }
-lvim.builtin.which_key.mappings["s"] = {
+lvim.builtin.which_key.mappings["st"] = {
   t = {
     "<cmd>lua require('telescope.builtin').grep_string({ search = '' })<CR>",
     "Text"
