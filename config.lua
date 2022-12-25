@@ -92,6 +92,8 @@ lvim.builtin.which_key.mappings["st"] = {
     "Text"
   },
 }
+lvim.builtin.which_key.mappings["bb"] = { "<cmd>:bp<CR>", "Previous" }
+lvim.builtin.which_key.mappings["bn"] = { "<cmd>:bn<CR>", "Next" }
 
 -- -- Change theme settings
 -- lvim.colorscheme = "lunar"
