@@ -81,7 +81,7 @@ lvim.builtin.which_key.mappings["t"] = {
     "<cmd>:TestNearest<CR>",
     "Test Nearest"
   },
-  t = {
+  f = {
     "<cmd>:TestFile<CR>",
     "Test File"
   },
@@ -226,10 +226,6 @@ lvim.plugins = {
     -- setup = function()
     --  vim.o.timeoutlen = 500
     -- end
-  },
-  {
-    "tpope/vim-bundler",
-    cmd = { "Bundler", "Bopen", "Bsplit", "Btabedit" }
   },
   {
     "turbio/bracey.vim",
