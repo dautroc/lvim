@@ -69,7 +69,20 @@ lvim.builtin.which_key.mappings["f"] = {
   p = {
     "<cmd>let @+=expand('%')<CR>",
     "Copy file path"
-  }
+  },
+  m = {
+    "<cmd>Telescope find_files cwd=app/models/<cr>",
+    "Find model"
+  },
+  c = {
+    "<cmd>Telescope find_files cwd=app/controllers/<cr>",
+    "Find controller"
+  },
+  s = {
+    "<cmd>Telescope find_files cwd=app/services/<cr>",
+    "Find service"
+  },
+
 }
 lvim.builtin.which_key.mappings["gy"] = {
   "<cmd>lua require('gitlinker').get_buf_range_url('n')",
