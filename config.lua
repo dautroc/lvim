@@ -111,8 +111,8 @@ lvim.builtin.which_key.mappings["st"] = {
   "<cmd>Telescope grep_string<CR>",
   "Text"
 }
-lvim.builtin.which_key.mappings["bb"] = { "<cmd>:bp<CR>", "Previous" }
-lvim.builtin.which_key.mappings["bn"] = { "<cmd>:bn<CR>", "Next" }
+lvim.builtin.which_key.mappings["bb"] = { ":bp<CR>", "Previous" }
+lvim.builtin.which_key.mappings["bn"] = { ":bn<CR>", "Next" }
 
 -- -- Change theme settings
 -- lvim.colorscheme = "lunar"
