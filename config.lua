@@ -82,6 +82,10 @@ lvim.builtin.which_key.mappings["f"] = {
     "<cmd>Telescope find_files cwd=app/services/<cr>",
     "Find service"
   },
+  b = {
+    "<cmd>Telescope file_browser<CR>",
+    "File browser"
+  }
 
 }
 lvim.builtin.which_key.mappings["gy"] = {
@@ -146,7 +150,20 @@ lvim.builtin.telescope.on_config_done = function(telescope)
         fzy_native = {
           override_generic_sorter = false,
           override_file_sorter = true,
-        }
+        },
+        file_browser = {
+          theme = "ivy",
+          -- disables netrw and use telescope-file-browser in its place
+          hijack_netrw = true,
+          mappings = {
+            ["i"] = {
+              -- your custom insert mode mappings
+            },
+            ["n"] = {
+              -- your custom normal mode mappings
+            },
+          },
+        },
       }
     },
   })
@@ -154,6 +171,7 @@ lvim.builtin.telescope.on_config_done = function(telescope)
   -- any other extensions loading
   -- telescope.load_extension('fzf')
   telescope.load_extension('fzy_native')
+  telescope.load_extension('file_browser')
 end
 
 -- Automatically install missing parsers when entering buffer
@@ -345,6 +363,7 @@ lvim.plugins = {
   { "vim-test/vim-test", requires = "preservim/vimux" },
   { "tiagovla/scope.nvim" },
   { 'nvim-telescope/telescope-fzy-native.nvim' },
+  { "nvim-telescope/telescope-file-browser.nvim" },
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
