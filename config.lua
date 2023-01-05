@@ -146,7 +146,7 @@ lvim.builtin.telescope.on_config_done = function(telescope)
   })
 
   -- any other extensions loading
-  -- pcall(telescope.load_extension, "fzf")
+  telescope.load_extension('fzf')
 end
 
 -- Automatically install missing parsers when entering buffer
@@ -337,7 +337,7 @@ lvim.plugins = {
   { "tpope/vim-projectionist" },
   { "vim-test/vim-test", requires = "preservim/vimux" },
   { "tiagovla/scope.nvim" },
-  { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+  { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
