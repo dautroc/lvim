@@ -82,6 +82,10 @@ lvim.builtin.which_key.mappings["f"] = {
     "<cmd>Telescope find_files cwd=app/services/<cr>",
     "Find service"
   },
+  g = {
+    "<cmd>Telescope find_files cwd=db/migrate/<cr>",
+    "Find migration files"
+  },
   b = {
     "<cmd>Telescope file_browser<CR>",
     "File browser"
