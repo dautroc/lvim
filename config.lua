@@ -142,11 +142,18 @@ lvim.builtin.telescope.on_config_done = function(telescope)
           find_command = { "rg", "--files", "--glob", "!**/.git/*" }, -- hide git branch
         }
       },
+      extensions = {
+        fzy_native = {
+          override_generic_sorter = false,
+          override_file_sorter = true,
+        }
+      }
     },
   })
 
   -- any other extensions loading
-  telescope.load_extension('fzf')
+  -- telescope.load_extension('fzf')
+  telescope.load_extension('fzy_native')
 end
 
 -- Automatically install missing parsers when entering buffer
@@ -337,7 +344,7 @@ lvim.plugins = {
   { "tpope/vim-projectionist" },
   { "vim-test/vim-test", requires = "preservim/vimux" },
   { "tiagovla/scope.nvim" },
-  { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+  { 'nvim-telescope/telescope-fzy-native.nvim' },
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
