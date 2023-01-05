@@ -100,10 +100,8 @@ lvim.builtin.which_key.mappings["t"] = {
   },
 }
 lvim.builtin.which_key.mappings["st"] = {
-  t = {
-    "<cmd>lua require('telescope.builtin').grep_string({ search = '' })<CR>",
-    "Text"
-  },
+  "<cmd>Telescope grep_string<CR>",
+  "Text"
 }
 lvim.builtin.which_key.mappings["bb"] = { "<cmd>:bp<CR>", "Previous" }
 lvim.builtin.which_key.mappings["bn"] = { "<cmd>:bn<CR>", "Next" }
@@ -132,6 +130,12 @@ lvim.builtin.telescope.on_config_done = function(telescope)
           ["<C-j>"] = actions.move_selection_next,
           ["<C-k>"] = actions.move_selection_previous,
         },
+        n = {
+          ["<C-u>"] = false, -- clear prompt
+          ["<esc>"] = actions.close, -- quit insert mode
+          ["<C-j>"] = actions.move_selection_next,
+          ["<C-k>"] = actions.move_selection_previous,
+        }
       },
       pickers = {
         find_files = {
