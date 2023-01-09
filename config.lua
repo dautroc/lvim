@@ -355,11 +355,12 @@ lvim.plugins = {
     end
   },
   { "tpope/vim-repeat" },
-  { "felipec/vim-sanegx", event = "BufRead", },
   { "wakatime/vim-wakatime" },
   { "tpope/vim-projectionist" },
   { "vim-test/vim-test", requires = "preservim/vimux" },
-  { "tiagovla/scope.nvim" },
+  { "tiagovla/scope.nvim" }, -- Using tab
+
+  -- Telescope plugins
   { 'nvim-telescope/telescope-fzy-native.nvim' },
   { "nvim-telescope/telescope-file-browser.nvim" },
 }
