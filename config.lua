@@ -270,7 +270,7 @@ lvim.plugins = {
   {
     "turbio/bracey.vim",
     cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
-    run = "npm install --prefix server",
+    build = "npm install --prefix server",
   },
   {
     "windwp/nvim-spectre",
@@ -310,7 +310,7 @@ lvim.plugins = {
         },
       }
     end,
-    requires = "nvim-lua/plenary.nvim",
+    dependencies = "nvim-lua/plenary.nvim",
   },
   {
     -- You must install glow globally
@@ -318,7 +318,7 @@ lvim.plugins = {
     -- yay -S glow
     "npxbr/glow.nvim",
     ft = { "markdown" }
-    -- run = "yay -S glow"
+    -- build = "yay -S glow"
   },
   {
     "p00f/nvim-ts-rainbow",
@@ -357,7 +357,7 @@ lvim.plugins = {
   { "tpope/vim-repeat" },
   { "wakatime/vim-wakatime" },
   { "tpope/vim-projectionist" },
-  { "vim-test/vim-test", requires = "preservim/vimux" },
+  { "vim-test/vim-test", dependencies = "preservim/vimux" },
   { "tiagovla/scope.nvim" }, -- Using tab
 
   -- Telescope plugins
