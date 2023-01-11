@@ -109,7 +109,7 @@ lvim.builtin.which_key.mappings["t"] = {
 }
 lvim.builtin.which_key.mappings["st"] = {
   "<cmd>Telescope grep_string<CR>",
-  "Text"
+  "Current text"
 }
 lvim.builtin.which_key.mappings["bb"] = { ":bp<CR>", "Previous" }
 lvim.builtin.which_key.mappings["bn"] = { ":bn<CR>", "Next" }
