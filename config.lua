@@ -62,6 +62,14 @@ lvim.builtin.which_key.mappings["f"] = {
     "<cmd>Telescope find_files hidden=false<CR>",
     "Find file"
   },
+  l = {
+    "<cmd>Telescope live_grep<CR>",
+    "Find text"
+  },
+  k = {
+    "<cmd>Telescope grep_string<CR>",
+    "Find current text"
+  },
   r = {
     "<cmd>Telescope oldfiles<CR>",
     "Recent files"
@@ -107,10 +115,7 @@ lvim.builtin.which_key.mappings["t"] = {
     "Test File"
   },
 }
-lvim.builtin.which_key.mappings["st"] = {
-  "<cmd>Telescope grep_string<CR>",
-  "Current text"
-}
+lvim.builtin.which_key.mappings["st"] = {}
 lvim.builtin.which_key.mappings["bb"] = { ":bp<CR>", "Previous" }
 lvim.builtin.which_key.mappings["bn"] = { ":bn<CR>", "Next" }
 
@@ -151,31 +156,18 @@ lvim.builtin.telescope.on_config_done = function(telescope)
         }
       },
       extensions = {
-        fzy_native = {
-          override_generic_sorter = false,
-          override_file_sorter = true,
-        },
-        file_browser = {
-          theme = "ivy",
-          -- disables netrw and use telescope-file-browser in its place
-          hijack_netrw = true,
-          mappings = {
-            ["i"] = {
-              -- your custom insert mode mappings
-            },
-            ["n"] = {
-              -- your custom normal mode mappings
-            },
-          },
+        fzf = {
+          fuzzy = true, -- false will only do exact matching
+          override_generic_sorter = true, -- override the generic sorter
+          override_file_sorter = true, -- override the file sorter
+          case_mode = "smart_case", -- or "ignore_case" or "respect_case"
         },
       }
     },
   })
 
   -- any other extensions loading
-  -- telescope.load_extension('fzf')
-  telescope.load_extension('fzy_native')
-  telescope.load_extension('file_browser')
+  telescope.load_extension('fzf')
 end
 
 -- Automatically install missing parsers when entering buffer
@@ -361,8 +353,7 @@ lvim.plugins = {
   { "tiagovla/scope.nvim" }, -- Using tab
 
   -- Telescope plugins
-  { 'nvim-telescope/telescope-fzy-native.nvim' },
-  { "nvim-telescope/telescope-file-browser.nvim" },
+  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
