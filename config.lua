@@ -29,6 +29,8 @@ lvim.keys.normal_mode["<C-p>"] = "<cmd>Telescope find_files hidden=false<CR>"
 lvim.keys.normal_mode["tk"] = ":tabnext<CR>"
 lvim.keys.normal_mode["tj"] = ":tabprev<CR>"
 lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
+lvim.keys.normal_mode["cn"] = ":cn<CR>"
+lvim.keys.normal_mode["cp"] = ":cp<CR>"
 
 lvim.keys.normal_mode["#"] = "*"
 
