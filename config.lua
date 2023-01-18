@@ -26,11 +26,6 @@ lvim.keys.normal_mode["cp"] = ":cp<CR>"
 lvim.keys.normal_mode["#"] = "*" -- Quick search next
 
 -- Mapping which key
-lvim.builtin.which_key.mappings["r"] = {
-  name = "+Replace",
-  r = { "<cmd>lua require('spectre').open()<CR>", "Replace" },
-  w = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Replace with current word" }
-}
 lvim.builtin.which_key.mappings["ln"] = { "<cmd>:NodeAction<cr>", "Node Action" }
 lvim.builtin.which_key.mappings["f"] = {
   name = "+File",
@@ -105,13 +100,6 @@ lvim.plugins = {
     "turbio/bracey.vim",
     cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
     build = "npm install --prefix server",
-  },
-  {
-    "windwp/nvim-spectre",
-    event = "BufRead",
-    config = function()
-      require("spectre").setup()
-    end,
   },
   {
     "windwp/nvim-ts-autotag",
