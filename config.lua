@@ -102,7 +102,8 @@ lvim.builtin.which_key.mappings["t"] = {
     "Test File"
   },
 }
-lvim.builtin.which_key.mappings["st"] = {}
+lvim.builtin.which_key.mappings["sh"] = { ":FzfLua help_tags", "Search help" }
+lvim.builtin.which_key.mappings["sk"] = { ":FzfLua keymaps", "Search keymaps" }
 lvim.builtin.which_key.mappings["bb"] = { ":bp<CR>", "Previous" }
 lvim.builtin.which_key.mappings["bn"] = { ":bn<CR>", "Next" }
 
