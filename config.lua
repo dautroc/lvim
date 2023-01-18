@@ -422,6 +422,8 @@ lvim.plugins = {
     },
     opts = {},
   },
+  { 'junegunn/fzf' },
+  { 'junegunn/fzf.vim' },
 
   -- Telescope plugins
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
