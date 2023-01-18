@@ -48,10 +48,10 @@ lvim.builtin.which_key.mappings["c"] = {
     "<cmd>:ChatGPT<cr>",
     "ChatGPT"
   },
-  -- a = {
-  --   "<cmd>:ChatGPTActAs<cr>",
-  --   "ChatGPT Act As"
-  -- },
+  a = {
+    "<cmd>:ChatGPTActAs<cr>",
+    "ChatGPT Act As"
+  },
   -- e = {
   --   "<cmd>:ChatGPTEditWithInstructions<cr>",
   --   "ChatGPT Edit With Instruction"
