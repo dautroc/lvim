@@ -1,9 +1,3 @@
---[[a
-
- THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
- `lvim` is the global options object
-]]
-
 -- vim options
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
@@ -13,19 +7,18 @@ vim.opt.relativenumber = true
 lvim.log.level = "info"
 lvim.format_on_save = {
   enabled = true,
+  -- lvim.use_icons = false
   pattern = "*.lua",
   timeout = 1000,
 }
 
 -- to disable icons and use a minimalist setup, uncomment the following
--- lvim.use_icons = false
 
--- KEY MAPPING <https://www.lunarvim.org/docs/configuration/keybindings>
 lvim.leader = "space"
 -- add your own keymapping
 lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
 lvim.keys.insert_mode["jj"] = "<esc>"
-lvim.keys.normal_mode["<C-p>"] = "<cmd>Telescope find_files hidden=false<CR>"
+lvim.keys.normal_mode["<C-p>"] = "<cmd>:FzfLua files<CR>"
 
 lvim.keys.normal_mode["tk"] = ":tabnext<CR>"
 lvim.keys.normal_mode["tj"] = ":tabprev<CR>"
@@ -42,8 +35,8 @@ lvim.keys.normal_mode["<C-h>"] = {}
 lvim.keys.normal_mode["<C-l>"] = {}
 
 -- Item nagvigation
-lvim.keys.normal_mode["<C-j>"] = "<C-n>"
-lvim.keys.normal_mode["<C-k>"] = "<C-p>"
+-- lvim.keys.normal_mode["<C-j>"] = { "<C-n>" }
+-- lvim.keys.normal_mode["<C-k>"] = { "<C-p>" }
 
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
@@ -87,25 +80,21 @@ lvim.builtin.which_key.mappings["f"] = {
     "<cmd>NvimTreeFindFile<CR>",
     "Find file in explorer"
   },
-  f = {
-    "<cmd>Telescope find_files hidden=false<CR>",
-    "Find file"
-  },
-  l = {
-    "<cmd>Telescope live_grep<CR>",
-    "Find text"
-  },
-  k = {
-    "<cmd>Telescope grep_string search=''<CR>",
-    "Find current text"
-  },
-  r = {
-    "<cmd>Telescope oldfiles<CR>",
-    "Recent files"
-  },
   p = {
     "<cmd>let @+=expand('%')<CR>",
     "Copy file path"
+  },
+  b = {
+    "<cmd>:FzfLua buffers<CR>",
+    "Find buffers"
+  },
+  l = {
+    "<cmd>:FzfLua blines<CR>",
+    "Find lines"
+  },
+  f = {
+    "<cmd>:FzfLua grep_cword<CR>",
+    "Find grep cword"
   },
 }
 lvim.builtin.which_key.mappings["gy"] = {
@@ -396,8 +385,7 @@ lvim.plugins = {
     },
     opts = {},
   },
-  { 'junegunn/fzf' },
-  { 'junegunn/fzf.vim' },
+  { 'ibhagwan/fzf-lua' },
 
   -- Telescope plugins
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
