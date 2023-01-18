@@ -28,44 +28,17 @@ lvim.keys.normal_mode["#"] = "*" -- Quick search next
 -- Mapping which key
 lvim.builtin.which_key.mappings["r"] = {
   name = "+Replace",
-  r = {
-    "<cmd>lua require('spectre').open()<CR>",
-    "Replace"
-  },
-  w = {
-    "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
-    "Replace with current word"
-  }
+  r = { "<cmd>lua require('spectre').open()<CR>", "Replace" },
+  w = { "<cmd>lua require('spectre').open_visual({select_word=true})<CR>", "Replace with current word" }
 }
-lvim.builtin.which_key.mappings["n"] = {
-  name = "+Node",
-  a = {
-    "<cmd>:NodeAction<cr>",
-    "Node Action"
-  }
-}
+lvim.builtin.which_key.mappings["ln"] = { "<cmd>:NodeAction<cr>", "Node Action" }
 lvim.builtin.which_key.mappings["f"] = {
   name = "+File",
-  e = {
-    "<cmd>NvimTreeFindFile<CR>",
-    "Find file in explorer"
-  },
-  y = {
-    "<cmd>let @+=expand('%')<CR>",
-    "Copy file path"
-  },
-  b = {
-    "<cmd>:FzfLua buffers<CR>",
-    "Find buffers"
-  },
-  l = {
-    "<cmd>:FzfLua blines<CR>",
-    "Find lines"
-  },
-  f = {
-    "<cmd>:FzfLua grep_cword<CR>",
-    "Find grep cword"
-  },
+  e = { "<cmd>NvimTreeFindFile<CR>", "Find file in explorer" },
+  y = { "<cmd>let @+=expand('%')<CR>", "Copy file path" },
+  b = { "<cmd>:FzfLua buffers<CR>", "Find buffers" },
+  l = { "<cmd>:FzfLua blines<CR>", "Find lines" },
+  f = { "<cmd>:FzfLua grep_cword<CR>", "Find grep cword" },
 }
 lvim.builtin.which_key.mappings["gy"] = {
   "<cmd>lua require('gitlinker').get_buf_range_url('n')",
@@ -73,17 +46,11 @@ lvim.builtin.which_key.mappings["gy"] = {
 }
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Tests",
-  n = {
-    "<cmd>:TestNearest<CR>",
-    "Test Nearest"
-  },
-  f = {
-    "<cmd>:TestFile<CR>",
-    "Test File"
-  },
+  n = { "<cmd>:TestNearest<CR>", "Test Nearest" },
+  f = { "<cmd>:TestFile<CR>", "Test File" },
 }
-lvim.builtin.which_key.mappings["sh"] = { ":FzfLua help_tags", "Search help" }
-lvim.builtin.which_key.mappings["sk"] = { ":FzfLua keymaps", "Search keymaps" }
+lvim.builtin.which_key.mappings["sh"] = { ":FzfLua help_tags<cr>", "Search help" }
+lvim.builtin.which_key.mappings["sk"] = { ":FzfLua keymaps<cr>", "Search keymaps" }
 lvim.builtin.which_key.mappings["bb"] = { ":bp<CR>", "Previous" }
 lvim.builtin.which_key.mappings["bn"] = { ":bn<CR>", "Next" }
 
