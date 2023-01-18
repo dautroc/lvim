@@ -1,4 +1,5 @@
---[[
+--[[a
+
  THESE ARE EXAMPLE CONFIGS FEEL FREE TO CHANGE TO WHATEVER YOU WANT
  `lvim` is the global options object
 ]]
@@ -53,6 +54,21 @@ lvim.builtin.which_key.mappings["r"] = {
     "<cmd>lua require('spectre').open_visual({select_word=true})<CR>",
     "Replace with current word"
   }
+}
+lvim.builtin.which_key.mappings["c"] = {
+  name = "+ChatGPT",
+  c = {
+    "<cmd>:ChatGPT<cr>",
+    "ChatGPT"
+  },
+  -- a = {
+  --   "<cmd>:ChatGPTActAs<cr>",
+  --   "ChatGPT Act As"
+  -- },
+  -- e = {
+  --   "<cmd>:ChatGPTEditWithInstructions<cr>",
+  --   "ChatGPT Edit With Instruction"
+  -- },
 }
 lvim.builtin.which_key.mappings["n"] = {
   name = "+Node",
@@ -363,6 +379,15 @@ lvim.plugins = {
   {
     'ckolkey/ts-node-action',
     dependencies = { 'nvim-treesitter' },
+    opts = {},
+  },
+  {
+    "jackMort/ChatGPT.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    },
     opts = {},
   },
 
