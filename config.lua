@@ -113,11 +113,6 @@ lvim.builtin.which_key.mappings["f"] = {
     "<cmd>Telescope find_files cwd=db/migrate/<cr>",
     "Find migration files"
   },
-  b = {
-    "<cmd>Telescope file_browser<CR>",
-    "File browser"
-  }
-
 }
 lvim.builtin.which_key.mappings["gy"] = {
   "<cmd>lua require('gitlinker').get_buf_range_url('n')",
