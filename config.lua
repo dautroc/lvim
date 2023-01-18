@@ -93,14 +93,7 @@ lvim.plugins = {
       }
     end
   },
-  {
-    "tpope/vim-surround",
-  },
-  {
-    "turbio/bracey.vim",
-    cmd = { "Bracey", "BracyStop", "BraceyReload", "BraceyEval" },
-    build = "npm install --prefix server",
-  },
+  { "tpope/vim-surround" },
   {
     "windwp/nvim-ts-autotag",
     config = function()
@@ -129,13 +122,8 @@ lvim.plugins = {
     end,
     dependencies = "nvim-lua/plenary.nvim",
   },
-  {
-    "npxbr/glow.nvim",
-    ft = { "markdown" }
-  },
-  {
-    "p00f/nvim-ts-rainbow",
-  },
+  { "npxbr/glow.nvim", ft = { "markdown" } },
+  { "p00f/nvim-ts-rainbow" },
   {
     "karb94/neoscroll.nvim",
     event = "WinScrolled",
@@ -158,11 +146,7 @@ lvim.plugins = {
   { "tpope/vim-projectionist" },
   { "vim-test/vim-test", dependencies = "preservim/vimux" },
   { "tiagovla/scope.nvim" }, -- Using tab
-  {
-    'ckolkey/ts-node-action',
-    dependencies = { 'nvim-treesitter' },
-    opts = {},
-  },
+  { 'ckolkey/ts-node-action', dependencies = { 'nvim-treesitter' }, opts = {} },
   { 'ibhagwan/fzf-lua' },
 }
 
