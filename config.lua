@@ -187,7 +187,39 @@ lvim.builtin.telescope.on_config_done = function(telescope)
           override_file_sorter = true, -- override the file sorter
           case_mode = "smart_case", -- or "ignore_case" or "respect_case"
         },
-      }
+      },
+      vimgrep_arguments = {
+        "rg",
+        "-L",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case",
+      },
+      initial_mode = "insert",
+      layout_strategy = "horizontal",
+      layout_config = {
+        horizontal = {
+          prompt_position = "top",
+          preview_width = 0.55,
+          results_width = 0.8,
+        },
+        vertical = {
+          mirror = false,
+        },
+        width = 0.87,
+        height = 0.80,
+        preview_cutoff = 120,
+      },
+      file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+      grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+      qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+      buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
+      color_devicons = true,
+      border = {},
+      borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
     },
   })
 
