@@ -52,10 +52,6 @@ lvim.builtin.which_key.mappings["c"] = {
     "<cmd>:ChatGPTActAs<cr>",
     "ChatGPT Act As"
   },
-  -- e = {
-  --   "<cmd>:ChatGPTEditWithInstructions<cr>",
-  --   "ChatGPT Edit With Instruction"
-  -- },
 }
 lvim.builtin.which_key.mappings["n"] = {
   name = "+Node",
@@ -70,7 +66,7 @@ lvim.builtin.which_key.mappings["f"] = {
     "<cmd>NvimTreeFindFile<CR>",
     "Find file in explorer"
   },
-  p = {
+  y = {
     "<cmd>let @+=expand('%')<CR>",
     "Copy file path"
   },
