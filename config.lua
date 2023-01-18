@@ -35,12 +35,6 @@ lvim.keys.normal_mode["cp"] = ":cp<CR>"
 
 lvim.keys.normal_mode["#"] = "*"
 
--- Move line
--- lvim.keys.visual_mode["<C-j>"] = ":m '>+1<CR>gv=gv"
--- lvim.keys.visual_mode["<C-k>"] = ":m '<-2<CR>gv=gv"
--- lvim.keys.normal_mode["<C-j>"] = ":m .+1<CR>=="
--- lvim.keys.normal_mode["<C-k>"] = ":m .-2<CR>=="
-
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
@@ -92,7 +86,7 @@ lvim.builtin.which_key.mappings["f"] = {
     "Find text"
   },
   k = {
-    "<cmd>Telescope grep_string<CR>",
+    "<cmd>Telescope grep_string search=''<CR>",
     "Find current text"
   },
   r = {
@@ -185,18 +179,9 @@ lvim.builtin.telescope.on_config_done = function(telescope)
           fuzzy = true, -- false will only do exact matching
           override_generic_sorter = true, -- override the generic sorter
           override_file_sorter = true, -- override the file sorter
-          case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+          -- case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+          case_mode = "ignore_case", -- or "ignore_case" or "respect_case"
         },
-      },
-      vimgrep_arguments = {
-        "rg",
-        "-L",
-        "--color=never",
-        "--no-heading",
-        "--with-filename",
-        "--line-number",
-        "--column",
-        "--smart-case",
       },
       initial_mode = "insert",
       layout_strategy = "horizontal",
