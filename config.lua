@@ -143,13 +143,13 @@ lvim.builtin.telescope.on_config_done = function(telescope)
         }
       },
       extensions = {
-        fzf = {
-          fuzzy = true, -- false will only do exact matching
-          override_generic_sorter = true, -- override the generic sorter
-          override_file_sorter = true, -- override the file sorter
-          -- case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-          case_mode = "ignore_case", -- or "ignore_case" or "respect_case"
-        },
+        -- fzf = {
+        --   fuzzy = true, -- false will only do exact matching
+        --   override_generic_sorter = true, -- override the generic sorter
+        --   override_file_sorter = true, -- override the file sorter
+        --   -- case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+        --   case_mode = "ignore_case", -- or "ignore_case" or "respect_case"
+        -- },
       },
       initial_mode = "insert",
       layout_strategy = "horizontal",
@@ -177,7 +177,7 @@ lvim.builtin.telescope.on_config_done = function(telescope)
   })
 
   -- any other extensions loading
-  telescope.load_extension('fzf')
+  -- telescope.load_extension('fzf')
 end
 
 -- Automatically install missing parsers when entering buffer
@@ -376,9 +376,6 @@ lvim.plugins = {
     opts = {},
   },
   { 'ibhagwan/fzf-lua' },
-
-  -- Telescope plugins
-  { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 }
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
@@ -390,3 +387,6 @@ lvim.plugins = {
 --   end,
 -- })
 vim.g['test#strategy'] = 'vimux'
+
+-- Disable plugins
+-- lvim.builtin.telescope.active = false
