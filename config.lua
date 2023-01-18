@@ -28,16 +28,6 @@ lvim.keys.normal_mode["cp"] = ":cp<CR>"
 
 lvim.keys.normal_mode["#"] = "*" -- Quick search next
 
--- Disable switch window
-lvim.keys.normal_mode["<C-j>"] = {}
-lvim.keys.normal_mode["<C-k>"] = {}
-lvim.keys.normal_mode["<C-h>"] = {}
-lvim.keys.normal_mode["<C-l>"] = {}
-
--- Item nagvigation
--- lvim.keys.normal_mode["<C-j>"] = { "<C-n>" }
--- lvim.keys.normal_mode["<C-k>"] = { "<C-p>" }
-
 -- Use which-key to add extra bindings with the leader-key prefix
 -- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
