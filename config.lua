@@ -54,6 +54,13 @@ lvim.builtin.which_key.mappings["r"] = {
     "Replace with current word"
   }
 }
+lvim.builtin.which_key.mappings["n"] = {
+  name = "+Node",
+  a = {
+    "<cmd>:NodeAction<cr>",
+    "Node Action"
+  }
+}
 lvim.builtin.which_key.mappings["f"] = {
   name = "+File",
   e = {
@@ -353,6 +360,11 @@ lvim.plugins = {
   { "tpope/vim-projectionist" },
   { "vim-test/vim-test", dependencies = "preservim/vimux" },
   { "tiagovla/scope.nvim" }, -- Using tab
+  {
+    'ckolkey/ts-node-action',
+    dependencies = { 'nvim-treesitter' },
+    opts = {},
+  },
 
   -- Telescope plugins
   { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
