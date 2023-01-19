@@ -5,6 +5,7 @@ lvim.builtin.which_key.mappings["f"] = {
   y = { "<cmd>let @+=expand('%')<CR>", "Copy file path" },
   b = { "<cmd>FzfLua buffers<CR>", "Find buffers" },
   o = { "<cmd>FzfLua oldfiles<CR>", "Find old files" },
+  f = { "<cmd>FzfLua files<CR>", "Find files" },
 }
 lvim.builtin.which_key.mappings["s"] = {
   name = "+Search",

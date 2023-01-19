@@ -17,7 +17,6 @@ lvim.leader = "space"
 -- Mapping normal keys
 lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
 lvim.keys.insert_mode["jj"] = "<esc>"
-lvim.keys.normal_mode["<C-p>"] = "<cmd>:FzfLua files<CR>"
 lvim.keys.normal_mode["tk"] = ":tabnext<CR>"
 lvim.keys.normal_mode["tj"] = ":tabprev<CR>"
 lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
@@ -25,7 +24,7 @@ lvim.keys.normal_mode["cn"] = ":cn<CR>"
 lvim.keys.normal_mode["cp"] = ":cp<CR>"
 lvim.keys.normal_mode["s"] = "*"
 lvim.keys.normal_mode["S"] = ":FzfLua grep_cword args<CR>"
-lvim.keys.normal_mode["r"] = ":HopWord<CR>"
+lvim.keys.normal_mode["e"] = ":HopWord<CR>"
 vim.g['test#strategy'] = 'vimux'
 
 require 'whichkey_mapping'
