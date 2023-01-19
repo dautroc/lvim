@@ -13,6 +13,7 @@ lvim.builtin.which_key.mappings["s"] = {
   k = { "<cmd>FzfLua keymaps<cr>", "Search keymaps" },
   t = { "<cmd>FzfLua grep_cword<cr>", "Search text" },
   l = { "<cmd>FzfLua blines<CR>", "Search buffer lines" },
+  c = { "<cmd>FzfLua grep_cword args<CR>", "Search current text" },
 }
 lvim.builtin.which_key.mappings["gy"] = {
   "<cmd>lua require('gitlinker').get_buf_range_url('n')",
