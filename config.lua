@@ -17,7 +17,21 @@ lvim.leader = "space"
 --------------
 -- KEY MAPS --
 --------------
-lvim.keys.normal_mode["<C-s>"] = ":w<CR>"
+---- Undo break points
+lvim.keys.insert_mode['_'] = '_<C-g>u'
+lvim.keys.insert_mode[','] = ',<C-g>u'
+lvim.keys.insert_mode['.'] = '.<C-g>u'
+lvim.keys.insert_mode['!'] = '!<C-g>u'
+lvim.keys.insert_mode['?'] = '?<C-g>u'
+lvim.keys.insert_mode['['] = '[<C-g>u'
+lvim.keys.insert_mode[']'] = ']<C-g>u'
+lvim.keys.insert_mode['{'] = '{<C-g>u'
+lvim.keys.insert_mode['}'] = '}<C-g>u'
+lvim.keys.insert_mode['('] = '(<C-g>u'
+lvim.keys.insert_mode[')'] = ')<C-g>u'
+lvim.keys.insert_mode[' '] = ' <C-g>u'
+
+lvim.keys.normal_mode["<Leader><Leader>"] = ":FzfLua files<CR>"
 lvim.keys.insert_mode["jj"] = "<esc>"
 lvim.keys.normal_mode["tk"] = ":tabnext<CR>"
 lvim.keys.normal_mode["tj"] = ":tabprev<CR>"
