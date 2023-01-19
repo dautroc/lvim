@@ -23,8 +23,6 @@ lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
 lvim.keys.normal_mode["cn"] = ":cn<CR>"
 lvim.keys.normal_mode["cp"] = ":cp<CR>"
 lvim.keys.normal_mode["#"] = "*"
-lvim.keys.normal_mode["S"] = ":FzfLua grep_cword args<CR>"
-lvim.keys.normal_mode["e"] = ":HopWord<CR>"
 vim.g['test#strategy'] = 'vimux'
 
 require 'whichkey_mapping'
