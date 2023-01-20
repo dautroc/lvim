@@ -45,7 +45,7 @@
   "structlog.nvim": { "branch": "main", "commit": "232a8e26060440e0db9fefba857036442b34227d" },
   "toggleterm.nvim": { "branch": "main", "commit": "b02a1674bd0010d7982b056fd3df4f717ff8a57a" },
   "tokyonight.nvim": { "branch": "main", "commit": "def91651c41f6d1d43ebcb50763324d35331baee" },
-  "ts-node-action": { "branch": "master", "commit": "f5089cba6359dce57d2d0966e2c9b888fd3bdfc2" },
+  "ts-node-action": { "branch": "master", "commit": "88881ab67207b578d5d680b75ef74e59dcc47610" },
   "vim-illuminate": { "branch": "master", "commit": "a6d0b28ea7d6b9d139374be1f94a16bd120fcda3" },
   "vim-matchup": { "branch": "master", "commit": "959e0e79ea240cdee29efbdd0d2e2e718931ccec" },
   "vim-projectionist": { "branch": "master", "commit": "3a088946adb24a2fac7b47f3dea97a3b99f52ddd" },
