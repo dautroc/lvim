@@ -2,6 +2,8 @@
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.relativenumber = true
+vim.opt.foldmethod = "syntax"
+vim.opt.foldmarker = true
 
 -- general
 lvim.log.level = "info"
@@ -30,15 +32,16 @@ lvim.keys.insert_mode['}'] = '}<C-g>u'
 lvim.keys.insert_mode['('] = '(<C-g>u'
 lvim.keys.insert_mode[')'] = ')<C-g>u'
 lvim.keys.insert_mode[' '] = ' <C-g>u'
+lvim.keys.insert_mode["jj"] = "<esc>"
 
 lvim.keys.normal_mode["<Leader><Leader>"] = ":FzfLua files<CR>"
-lvim.keys.insert_mode["jj"] = "<esc>"
 lvim.keys.normal_mode["tk"] = ":tabnext<CR>"
 lvim.keys.normal_mode["tj"] = ":tabprev<CR>"
 lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
 lvim.keys.normal_mode["cn"] = ":cn<CR>"
 lvim.keys.normal_mode["cp"] = ":cp<CR>"
 lvim.keys.normal_mode["#"] = "*"
+lvim.keys.normal_mode["zff"] = "zf%"
 vim.g['test#strategy'] = 'vimux'
 
 lvim.builtin.which_key.mappings["lA"] = { "<cmd>NodeAction<cr>", "Node Action" }
