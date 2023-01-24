@@ -2,8 +2,6 @@
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.relativenumber = true
-vim.opt.foldmethod = "syntax"
-vim.opt.foldmarker = true
 
 -- general
 lvim.log.level = "info"
