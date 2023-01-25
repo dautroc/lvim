@@ -39,7 +39,6 @@ lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
 lvim.keys.normal_mode["cn"] = ":cn<CR>"
 lvim.keys.normal_mode["cp"] = ":cp<CR>"
 lvim.keys.normal_mode["#"] = "*"
-lvim.keys.normal_mode["zff"] = "zf%"
 vim.g['test#strategy'] = 'vimux'
 
 lvim.builtin.which_key.mappings["lA"] = { "<cmd>NodeAction<cr>", "Node Action" }
@@ -155,6 +154,13 @@ lvim.plugins = {
   { "tiagovla/scope.nvim" }, -- Using tab
   { 'ckolkey/ts-node-action', dependencies = { 'nvim-treesitter' }, opts = {} },
   { 'ibhagwan/fzf-lua' },
+  { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
+  {
+    "tzachar/cmp-tabnine",
+    build = "./install.sh",
+    dependencies = "hrsh7th/nvim-cmp",
+    event = "InsertEnter",
+  },
 }
 
 ---------------------
