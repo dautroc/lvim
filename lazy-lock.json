@@ -28,6 +28,7 @@
   "nlsp-settings.nvim": { "branch": "main", "commit": "215b537cfb3fad7c9c2e352fe47a10698b0993e0" },
   "null-ls.nvim": { "branch": "main", "commit": "6830a1ed04f89e6d556cb6bcc200433173004307" },
   "nvim-autopairs": { "branch": "master", "commit": "03580d758231956d33c8dd91e2be195106a79fa4" },
+  "nvim-bqf": { "branch": "main", "commit": "d15b59d7429d45f0b057aa63a0266989adc95715" },
   "nvim-cmp": { "branch": "main", "commit": "c49ad26e894e137e401b1d294948c46327877eaf" },
   "nvim-dap": { "branch": "master", "commit": "4902566da4b3d62d8ac4bbe95c445f7f5809a7b3" },
   "nvim-dap-ui": { "branch": "master", "commit": "f2206de65ea39093e3f13992507fc985c17aa763" },

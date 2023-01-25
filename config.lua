@@ -161,6 +161,7 @@ lvim.plugins = {
     dependencies = "hrsh7th/nvim-cmp",
     event = "InsertEnter",
   },
+  { 'kevinhwang91/nvim-bqf' },
 }
 
 ---------------------
