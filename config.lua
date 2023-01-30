@@ -155,12 +155,6 @@ lvim.plugins = {
   { 'ckolkey/ts-node-action', dependencies = { 'nvim-treesitter' }, opts = {} },
   { 'ibhagwan/fzf-lua' },
   { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' },
-  {
-    "tzachar/cmp-tabnine",
-    build = "./install.sh",
-    dependencies = "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
-  },
   { 'kevinhwang91/nvim-bqf' },
 }
 
