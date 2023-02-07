@@ -24,7 +24,6 @@ lvim.builtin.bufferline.options.mode = "tabs"
 -- Automatically install missing parsers when entering buffer
 lvim.builtin.treesitter.auto_install = true
 lvim.builtin.treesitter.rainbow.enable = true
-
 --------------
 -- KEY MAPS --
 --------------
@@ -78,7 +77,7 @@ lvim.builtin.which_key.mappings["st"] = {
 }
 
 --- Git
-lvim.builtin.which_key.mappings["gy"] = {
+lvim.builtin.which_key.mappings["go"] = {
   "<cmd>lua require('gitlinker').get_buf_range_url('n')",
   "Open in browser"
 }
