@@ -11,8 +11,10 @@ lvim.format_on_save = {
   timeout = 1000,
 }
 
+lvim.colorscheme = "tokyonight"
 lvim.leader = "space"
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["<space>"] = { "<cmd>Telescope find_files<CR>", "Find files" }
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "startify"
 lvim.builtin.terminal.active = true
@@ -42,7 +44,7 @@ lvim.keys.insert_mode[')'] = ')<C-g>u'
 lvim.keys.insert_mode[' '] = ' <C-g>u'
 lvim.keys.insert_mode["jj"] = "<esc>"
 
-lvim.keys.normal_mode["<Leader><Leader>"] = ":FzfLua files<CR>"
+---- Tab navigator
 lvim.keys.normal_mode["tk"] = ":tabnext<CR>"
 lvim.keys.normal_mode["tj"] = ":tabprev<CR>"
 lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
@@ -51,6 +53,10 @@ lvim.keys.normal_mode["cp"] = ":cp<CR>"
 lvim.keys.normal_mode["#"] = "*"
 vim.g['test#strategy'] = 'vimux'
 
+lvim.builtin.which_key.mappings["st"] = {
+  ":Telescope grep_string search=<CR>",
+  "Search text"
+}
 lvim.builtin.which_key.mappings["gy"] = {
   "<cmd>lua require('gitlinker').get_buf_range_url('n')",
   "Open in browser"
@@ -124,5 +130,42 @@ lvim.plugins = {
   { "tpope/vim-projectionist" },
   { "vim-test/vim-test", dependencies = "preservim/vimux" },
   { "tiagovla/scope.nvim" }, -- Using tab
-  { 'kevinhwang91/nvim-bqf' }, -- Better quickfix list
+  { "kevinhwang91/nvim-bqf" }, -- Better quickfix list
 }
+
+lvim.builtin.telescope.on_config_done = function(telescope)
+  local actions = require("telescope.actions")
+
+  telescope.setup({
+    defaults = {
+      mappings = {
+        i = {
+          ["<C-u>"] = false, -- clear prompt
+          ["<esc>"] = actions.close, -- quit insert mode
+          ["<C-j>"] = actions.move_selection_next,
+          ["<C-k>"] = actions.move_selection_previous,
+        },
+        n = {
+          ["<C-u>"] = false, -- clear prompt
+          ["<esc>"] = actions.close, -- quit insert mode
+          ["<C-j>"] = actions.move_selection_next,
+          ["<C-k>"] = actions.move_selection_previous,
+        }
+      },
+      vimgrep_arguments = {
+        'rg',
+        '--color=never',
+        '--no-heading',
+        '--with-filename',
+        '--line-number',
+        '--column',
+        '--smart-case',
+        '--ignore',
+        '--hidden',
+        '--fixed-strings',
+      },
+    },
+  })
+
+  -- pcall(telescope.load_extension, "ag")
+end
