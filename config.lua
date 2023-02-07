@@ -54,6 +54,14 @@ lvim.keys.normal_mode["cp"] = ":cp<CR>"
 lvim.keys.normal_mode["#"] = "*"
 vim.g['test#strategy'] = 'vimux'
 
+--- Buffers
+lvim.builtin.which_key.mappings["b"] = {
+  name = "+Buffers",
+  b = { ":bp<CR>", "Previous" },
+  n = { ":bn<CR>", "Next" },
+  f = { ":Telescope buffers<CR>", "Find" },
+}
+--- Telescope
 lvim.builtin.which_key.mappings["st"] = {
   ":Telescope grep_string search=<CR>",
   "Search text"
