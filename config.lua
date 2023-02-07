@@ -48,9 +48,13 @@ lvim.keys.insert_mode["jj"] = "<esc>"
 lvim.keys.normal_mode["tk"] = ":tabnext<CR>"
 lvim.keys.normal_mode["tj"] = ":tabprev<CR>"
 lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
+
+--- Quickfix
 lvim.keys.normal_mode["co"] = ":copen<CR>"
 lvim.keys.normal_mode["cn"] = ":cn<CR>"
 lvim.keys.normal_mode["cp"] = ":cp<CR>"
+
+--- Misc
 lvim.keys.normal_mode["#"] = "*"
 vim.g['test#strategy'] = 'vimux'
 
@@ -61,15 +65,19 @@ lvim.builtin.which_key.mappings["b"] = {
   n = { ":bn<CR>", "Next" },
   f = { ":Telescope buffers<CR>", "Find" },
 }
---- Telescope
+--- Search
 lvim.builtin.which_key.mappings["st"] = {
   ":Telescope grep_string search=<CR>",
   "Search text"
 }
+
+--- Git
 lvim.builtin.which_key.mappings["gy"] = {
   "<cmd>lua require('gitlinker').get_buf_range_url('n')",
   "Open in browser"
 }
+
+--- Test
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Tests",
   n = { "<cmd>TestNearest<CR>", "Test Nearest" },
