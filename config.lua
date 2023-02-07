@@ -14,7 +14,6 @@ lvim.format_on_save = {
 lvim.colorscheme = "tokyonight"
 lvim.leader = "space"
 lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
-lvim.builtin.which_key.mappings["<space>"] = { "<cmd>Telescope find_files<CR>", "Find files" }
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "startify"
 lvim.builtin.terminal.active = true
@@ -57,6 +56,13 @@ lvim.keys.normal_mode["cp"] = ":cp<CR>"
 --- Misc
 lvim.keys.normal_mode["#"] = "*"
 vim.g['test#strategy'] = 'vimux'
+
+--- Files
+lvim.builtin.which_key.mappings["<space>"] = { "<cmd>Telescope find_files<CR>", "Find files" }
+lvim.builtin.which_key.mappings["f"] = {
+  name = "+Files",
+  f = { ":Telescope find_files<CR>", "Find" },
+}
 
 --- Buffers
 lvim.builtin.which_key.mappings["b"] = {
@@ -153,6 +159,7 @@ lvim.plugins = {
 lvim.builtin.telescope.on_config_done = function(telescope)
   local actions = require("telescope.actions")
 
+
   telescope.setup({
     defaults = {
       mappings = {
@@ -180,6 +187,14 @@ lvim.builtin.telescope.on_config_done = function(telescope)
         '--ignore',
         '--hidden',
         '--fixed-strings',
+      },
+    },
+    pickers = {
+      find_files = {
+        theme = "ivy",
+      },
+      grep_string = {
+        theme = "ivy",
       },
     },
   })
