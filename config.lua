@@ -48,10 +48,10 @@ lvim.keys.normal_mode["tj"] = ":tabprev<CR>"
 lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
 
 --- Quickfix
-lvim.keys.normal_mode["co"] = ":copen<CR>"
-lvim.keys.normal_mode["cc"] = ":cclose<CR>"
-lvim.keys.normal_mode["cn"] = ":cn<CR>"
-lvim.keys.normal_mode["cp"] = ":cp<CR>"
+-- lvim.keys.normal_mode["co"] = ":copen<CR>"
+-- lvim.keys.normal_mode["cc"] = ":cclose<CR>"
+-- lvim.keys.normal_mode["cn"] = ":cn<CR>"
+-- lvim.keys.normal_mode["cp"] = ":cp<CR>"
 
 --- Misc
 lvim.keys.normal_mode["<space><space>"] = ":FzfLua files<CR>"
@@ -174,7 +174,32 @@ lvim.plugins = {
   { "tpope/vim-projectionist" },
   { "vim-test/vim-test", dependencies = "preservim/vimux" },
   { "tiagovla/scope.nvim" }, -- Using tab
-  { "kevinhwang91/nvim-bqf" }, -- Better quickfix list
+  {
+    "kevinhwang91/nvim-bqf",
+    event = { "BufRead", "BufNew" },
+    config = function()
+      require("bqf").setup({
+        auto_enable = true,
+        preview = {
+          win_height = 12,
+          win_vheight = 12,
+          delay_syntax = 80,
+          border_chars = { "┃", "┃", "━", "━", "┏", "┓", "┗", "┛", "█" },
+        },
+        func_map = {
+          vsplit = "",
+          ptogglemode = "z,",
+          stoggleup = "",
+        },
+        filter = {
+          fzf = {
+            action_for = { ["ctrl-s"] = "split" },
+            extra_opts = { "--bind", "ctrl-o:toggle-all", "--prompt", "> " },
+          },
+        },
+      })
+    end,
+  }, -- Better quickfix list
   { "ibhagwan/fzf-lua" },
   { "kdheepak/lazygit.nvim" },
   { "nvim-treesitter/nvim-treesitter-textobjects" }
