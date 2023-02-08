@@ -123,14 +123,6 @@ lvim.builtin.which_key.mappings["m"] = {
   s = { ":FzfLua spell_suggest<CR>", "Spell suggest" },
 }
 
---- Bookmarks
--- lvim.builtin.which_key.mappings["B"] = {
---   name = "+Bookmark",
---   j = { ":FzfLua jumps<CR>", "Jumps" },
---   r = { ":FzfLua resume<CR>", "Resume last command" },
---   s = { ":FzfLua spell_suggest<CR>", "Spell suggest" },
--- }
-
 ---------------
 --- PLUGINS ---
 ---------------
