@@ -2,6 +2,7 @@
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
 vim.opt.relativenumber = true
+vim.opt.inccommand = "split"
 
 -- general
 lvim.log.level = "info"
@@ -89,14 +90,16 @@ lvim.builtin.which_key.mappings["s"] = {
   h = { ":FzfLua help_tags<CR>", "Help tags" },
   b = { ":FzfLua blines<CR>", "Current buffer lines" },
   l = { ":FzfLua live_grep<CR>", "Live grep" },
-  r = {
-    name = "+SearchReplaceSingleBuffer",
-    o = { ":SearchReplaceSingleBufferOpen<CR>", "Open" },
-    w = { ":SearchReplaceSingleBufferCWord<CR>", "word" },
-    W = { ":SearchReplaceSingleBufferCWORD<CR>", "Word" },
-    e = { ":SearchReplaceSingleBufferCExpr<CR>", "Expr" },
-    f = { ":SearchReplaceSingleBufferCFile<CR>", "File" },
-  },
+}
+
+--- Replace
+lvim.builtin.which_key.mappings["r"] = {
+  name = "+Replace",
+  o = { ":SearchReplaceSingleBufferOpen<CR>", "Open" },
+  w = { ":SearchReplaceSingleBufferCWord<CR>", "word" },
+  W = { ":SearchReplaceSingleBufferCWORD<CR>", "Word" },
+  e = { ":SearchReplaceSingleBufferCExpr<CR>", "Expr" },
+  f = { ":SearchReplaceSingleBufferCFile<CR>", "File" },
 }
 
 --- Git
