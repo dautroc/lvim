@@ -60,14 +60,14 @@ vim.g['test#strategy'] = 'vimux'
 
 --- Files
 lvim.builtin.which_key.mappings["f"] = {
-  name = "+Files",
+  name = "+File",
   f = { ":FzfLua files<CR>", "Find" },
   r = { ":FzfLua oldfiles<CR>", "Recent" },
 }
 
 --- Buffers
 lvim.builtin.which_key.mappings["b"] = {
-  name = "+Buffers",
+  name = "+Buffer",
   b = { ":bp<CR>", "Previous" },
   n = { ":bn<CR>", "Next" },
   f = { ":FzfLua buffers<CR>", "Find" },
@@ -75,7 +75,7 @@ lvim.builtin.which_key.mappings["b"] = {
 --- Search
 lvim.builtin.which_key.mappings["s"] = {
   name = "+Search",
-  t = { ":FzfLua grep_projectCR>", "Text" },
+  t = { ":FzfLua grep_visual<CR>", "Text" },
   c = { ":FzfLua grep_cword<CR>", "Current word" },
   k = { ":FzfLua keymaps<CR>", "Keymaps" },
   h = { ":FzfLua help_tags<CR>", "Help tags" },
@@ -91,7 +91,7 @@ lvim.builtin.which_key.mappings["go"] = {
 
 --- Test
 lvim.builtin.which_key.mappings["t"] = {
-  name = "+Tests",
+  name = "+Test",
   n = { "<cmd>TestNearest<CR>", "Test Nearest" },
   f = { "<cmd>TestFile<CR>", "Test File" },
 }
