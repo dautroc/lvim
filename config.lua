@@ -65,7 +65,6 @@ lvim.builtin.which_key.mappings["f"] = {
   r = { ":FzfLua oldfiles<CR>", "Recent" },
   a = { ":lua require('harpoon.mark').add_file()<CR>", "Add bookmark" },
   b = { ":lua require('harpoon.ui').toggle_quick_menu()<CR>", "Open bookmark" },
-
   t = {
     name = "+Test",
     n = { "<cmd>TestNearest<CR>", "Test Nearest" },
@@ -89,8 +88,15 @@ lvim.builtin.which_key.mappings["s"] = {
   k = { ":FzfLua keymaps<CR>", "Keymaps" },
   h = { ":FzfLua help_tags<CR>", "Help tags" },
   b = { ":FzfLua blines<CR>", "Current buffer lines" },
-  r = { ":FzfLua registers<CR>", "Registers" },
   l = { ":FzfLua live_grep<CR>", "Live grep" },
+  r = {
+    name = "+SearchReplaceSingleBuffer",
+    o = { ":SearchReplaceSingleBufferOpen<CR>", "Open" },
+    w = { ":SearchReplaceSingleBufferCWord<CR>", "word" },
+    W = { ":SearchReplaceSingleBufferCWORD<CR>", "Word" },
+    e = { ":SearchReplaceSingleBufferCExpr<CR>", "Expr" },
+    f = { ":SearchReplaceSingleBufferCFile<CR>", "File" },
+  },
 }
 
 --- Git
@@ -212,13 +218,8 @@ lvim.plugins = {
   { "nvim-treesitter/nvim-treesitter-textobjects" },
   { "ThePrimeagen/harpoon", dependencies = { "nvim-lua/plenary.nvim" } },
   { "MattesGroeger/vim-bookmarks" },
-  {
-    "kevinhwang91/nvim-hlslens",
-    config = function()
-      require('hlslens').setup()
-    end
-  },
-  { "roobert/search-replace.nvim" },
+  { "kevinhwang91/nvim-hlslens", config = function() require('hlslens').setup() end },
+  { "roobert/search-replace.nvim", config = function() require('search-replace').setup() end },
 }
 
 -- lvim.builtin.telescope.on_config_done = function(telescope)
