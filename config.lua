@@ -80,7 +80,8 @@ lvim.builtin.which_key.mappings["s"] = {
   k = { ":FzfLua keymaps<CR>", "Keymaps" },
   h = { ":FzfLua help_tags<CR>", "Help tags" },
   b = { ":FzfLua blines<CR>", "Current buffer lines" },
-  l = { ":FzfLua grep_last<CR>", "Last search" },
+  m = { ":FzfLua marks<CR>", "Marks" },
+  r = { ":FzfLua registers<CR>", "Registers" },
 }
 
 --- Git
@@ -95,7 +96,17 @@ lvim.builtin.which_key.mappings["t"] = {
   n = { "<cmd>TestNearest<CR>", "Test Nearest" },
   f = { "<cmd>TestFile<CR>", "Test File" },
 }
+--- Misc
+lvim.builtin.which_key.mappings["m"] = {
+  name = "+Misc",
+  j = { ":FzfLua jumps<CR>", "Jumps" },
+  r = { ":FzfLua resume<CR>", "Resume last command" },
+  s = { ":FzfLua spell_suggest<CR>", "Spell suggest" },
+}
 
+---------------
+--- PLUGINS ---
+---------------
 lvim.plugins = {
   {
     "phaazon/hop.nvim",
@@ -160,31 +171,30 @@ lvim.plugins = {
   { "vim-test/vim-test", dependencies = "preservim/vimux" },
   { "tiagovla/scope.nvim" }, -- Using tab
   { "kevinhwang91/nvim-bqf" }, -- Better quickfix list
-  { 'ibhagwan/fzf-lua' },
+  { "ibhagwan/fzf-lua" },
+  {
+    "gelguy/wilder.nvim",
+    config = function()
+      local wilder = require('wilder')
+      wilder.setup({ modes = { ':', '/', '?' } })
+
+      wilder.set_option('renderer', wilder.popupmenu_renderer({
+        -- highlighter applies highlighting to the candidates
+        highlighter = wilder.basic_highlighter(),
+      }))
+    end,
+  },
 }
 
-lvim.builtin.telescope.on_config_done = function(telescope)
-  local actions = require("telescope.actions")
-
-
-  telescope.setup({
-    defaults = {
-      mappings = {
-        i = {
-          ["<C-u>"] = false, -- clear prompt
-          ["<esc>"] = actions.close, -- quit insert mode
-          ["<C-j>"] = actions.move_selection_next,
-          ["<C-k>"] = actions.move_selection_previous,
-        },
-        n = {
-          ["<C-u>"] = false, -- clear prompt
-          ["<esc>"] = actions.close, -- quit insert mode
-          ["<C-j>"] = actions.move_selection_next,
-          ["<C-k>"] = actions.move_selection_previous,
-        }
-      },
-    },
-  })
-
-  -- pcall(telescope.load_extension, "ag")
-end
+---------------------
+--- AUTO COMMANND ---
+---------------------
+-- lvim.autocommands = {
+--   {
+--     "BufEnter", -- see `:h autocmd-events`
+--     { -- this table is passed verbatim as `opts` to `nvim_create_autocmd`
+--       pattern = { "*.json", "*.jsonc" }, -- see `:h autocmd-events`
+--       command = "setlocal wrap",
+--     }
+--   },
+-- }
