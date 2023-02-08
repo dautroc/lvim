@@ -212,6 +212,7 @@ lvim.plugins = {
   { "nvim-treesitter/nvim-treesitter-textobjects" },
   { "ThePrimeagen/harpoon", dependencies = { "nvim-lua/plenary.nvim" } },
   { "MattesGroeger/vim-bookmarks" },
+  { "kevinhwang91/nvim-hlslens" },
 }
 
 lvim.builtin.telescope.on_config_done = function(telescope)
