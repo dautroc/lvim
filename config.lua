@@ -63,7 +63,6 @@ lvim.builtin.which_key.mappings["f"] = {
   name = "+File",
   f = { ":FzfLua files<CR>", "Find" },
   r = { ":FzfLua oldfiles<CR>", "Recent" },
-  p = { ":let @+ = expand('%')<CR>", "Relative path" }
 }
 
 --- Buffers
@@ -72,6 +71,7 @@ lvim.builtin.which_key.mappings["b"] = {
   b = { ":bp<CR>", "Previous" },
   n = { ":bn<CR>", "Next" },
   f = { ":FzfLua buffers<CR>", "Find" },
+  y = { ":let @+ = expand('%')<CR>", "Copy relative path" }
 }
 --- Search
 lvim.builtin.which_key.mappings["s"] = {
