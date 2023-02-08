@@ -58,14 +58,22 @@ lvim.keys.normal_mode["<space><space>"] = ":FzfLua files<CR>"
 lvim.keys.normal_mode["#"] = "*"
 vim.g['test#strategy'] = 'vimux'
 
---- Files
+--- File
 lvim.builtin.which_key.mappings["f"] = {
   name = "+File",
   f = { ":FzfLua files<CR>", "Find" },
   r = { ":FzfLua oldfiles<CR>", "Recent" },
+  a = { ":lua require('harpoon.mark').add_file()<CR>", "Add bookmark" },
+  b = { ":lua require('harpoon.ui').toggle_quick_menu()<CR>", "Open bookmark" },
+
+  t = {
+    name = "+Test",
+    n = { "<cmd>TestNearest<CR>", "Test Nearest" },
+    f = { "<cmd>TestFile<CR>", "Test File" },
+  }
 }
 
---- Buffers
+--- Buffer
 lvim.builtin.which_key.mappings["b"] = {
   name = "+Buffer",
   b = { ":bp<CR>", "Previous" },
@@ -81,7 +89,6 @@ lvim.builtin.which_key.mappings["s"] = {
   k = { ":FzfLua keymaps<CR>", "Keymaps" },
   h = { ":FzfLua help_tags<CR>", "Help tags" },
   b = { ":FzfLua blines<CR>", "Current buffer lines" },
-  m = { ":FzfLua marks<CR>", "Marks" },
   r = { ":FzfLua registers<CR>", "Registers" },
   l = { ":FzfLua live_grep<CR>", "Live grep" },
 }
@@ -202,8 +209,14 @@ lvim.plugins = {
   }, -- Better quickfix list
   { "ibhagwan/fzf-lua" },
   { "kdheepak/lazygit.nvim" },
-  { "nvim-treesitter/nvim-treesitter-textobjects" }
+  { "nvim-treesitter/nvim-treesitter-textobjects" },
+  { "ThePrimeagen/harpoon", dependencies = { "nvim-lua/plenary.nvim" } },
+  { "MattesGroeger/vim-bookmarks" },
 }
+
+lvim.builtin.telescope.on_config_done = function(telescope)
+  -- pcall(telescope.load_extension, "vim_bookmarks")
+end
 
 lvim.builtin.treesitter.on_config_done = function()
   require 'nvim-treesitter.configs'.setup {
