@@ -63,6 +63,7 @@ lvim.builtin.which_key.mappings["f"] = {
   name = "+File",
   f = { ":FzfLua files<CR>", "Find" },
   r = { ":FzfLua oldfiles<CR>", "Recent" },
+  p = { ":let @+ = expand('%')<CR>", "Relative path" }
 }
 
 --- Buffers
