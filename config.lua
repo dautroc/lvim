@@ -88,7 +88,7 @@ lvim.builtin.which_key.mappings["s"] = {
 lvim.builtin.which_key.mappings["g"] = {
   name = "+Git",
   g = { ":LazyGit<CR>", "Open LazyGit" },
-  o = { "Open code in browser" },
+  y = { "Copy code URL" },
 }
 
 --- Test
@@ -138,10 +138,10 @@ lvim.plugins = {
     config = function()
       require("gitlinker").setup {
         opts = {
-          action_callback = require("gitlinker.actions").open_in_browser,
+          action_callback = require("gitlinker.actions").copy_to_clipboard,
           print_url = false,
         },
-        mappings = "<leader>go"
+        mappings = "<leader>gy"
       }
     end,
     dependencies = "nvim-lua/plenary.nvim",
@@ -177,25 +177,7 @@ lvim.plugins = {
     config = function()
       local wilder = require('wilder')
       wilder.setup({ modes = { ':', '/', '?' } })
-
-      wilder.set_option('renderer', wilder.popupmenu_renderer({
-        -- highlighter applies highlighting to the candidates
-        highlighter = wilder.basic_highlighter(),
-      }))
     end,
   },
   { "kdheepak/lazygit.nvim" },
 }
-
----------------------
---- AUTO COMMANND ---
----------------------
--- lvim.autocommands = {
---   {
---     "BufEnter", -- see `:h autocmd-events`
---     { -- this table is passed verbatim as `opts` to `nvim_create_autocmd`
---       pattern = { "*.json", "*.jsonc" }, -- see `:h autocmd-events`
---       command = "setlocal wrap",
---     }
---   },
--- }
