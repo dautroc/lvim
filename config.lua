@@ -125,8 +125,8 @@ lvim.plugins = {
     event = "BufRead",
     config = function()
       require("hop").setup()
-      -- vim.api.nvim_set_keymap("n", "<Tab>", ":HopChar2<cr>", { silent = true })
-      vim.api.nvim_set_keymap("n", "<Tab>", ":HopWord<cr>", { silent = true })
+      vim.api.nvim_set_keymap("n", "<Tab>", ":HopChar2<cr>", { silent = true })
+      -- vim.api.nvim_set_keymap("n", "<Tab>", ":HopWord<cr>", { silent = true })
     end,
   },
   { "tpope/vim-surround" },
