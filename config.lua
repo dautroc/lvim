@@ -85,9 +85,10 @@ lvim.builtin.which_key.mappings["s"] = {
 }
 
 --- Git
-lvim.builtin.which_key.mappings["go"] = {
-  "<cmd>lua require('gitlinker').get_buf_range_url('n')<CR>",
-  "Open in browser"
+lvim.builtin.which_key.mappings["g"] = {
+  name = "+Git",
+  g = { ":LazyGit<CR>", "Open LazyGit" },
+  o = { ":lua require('gitlinker').get_buf_range_url('n')<CR>", "Open code in browser" },
 }
 
 --- Test
@@ -140,7 +141,7 @@ lvim.plugins = {
           add_current_line_on_normal_mode = true,
           action_callback = require("gitlinker.actions").open_in_browser,
           print_url = false,
-          mappings = "<leader>gy",
+          mappings = "<leader>go",
         },
       }
     end,
@@ -184,6 +185,7 @@ lvim.plugins = {
       }))
     end,
   },
+  { "kdheepak/lazygit.nvim" },
 }
 
 ---------------------
