@@ -172,12 +172,5 @@ lvim.plugins = {
   { "tiagovla/scope.nvim" }, -- Using tab
   { "kevinhwang91/nvim-bqf" }, -- Better quickfix list
   { "ibhagwan/fzf-lua" },
-  {
-    "gelguy/wilder.nvim",
-    config = function()
-      local wilder = require('wilder')
-      wilder.setup({ modes = { ':', '/', '?' } })
-    end,
-  },
   { "kdheepak/lazygit.nvim" },
 }
