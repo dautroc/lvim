@@ -91,13 +91,8 @@ lvim.builtin.which_key.mappings["g"] = {
   name = "+Git",
   g = { ":LazyGit<CR>", "Open LazyGit" },
   y = { "Copy code URL" },
-  d = {
-    name = "+Diffview",
-    o = { ":DiffviewOpen<CR>", "Open" },
-    c = { ":DiffviewClose<CR>", "Close" },
-    f = { ":DiffviewFileHistory %<CR>", "Current file" },
-    b = { ":DiffviewFileHistory<CR>", "Current branch" },
-  },
+  b = { ":Gitsigns blame_line<CR>", "Blame" },
+  f = { ":LazyGitFilterCurrentFile<CR>", "File History" },
 }
 
 --- Test
@@ -182,5 +177,4 @@ lvim.plugins = {
   { "kevinhwang91/nvim-bqf" }, -- Better quickfix list
   { "ibhagwan/fzf-lua" },
   { "kdheepak/lazygit.nvim" },
-  { "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" }
 }
