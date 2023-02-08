@@ -82,6 +82,7 @@ lvim.builtin.which_key.mappings["s"] = {
   b = { ":FzfLua blines<CR>", "Current buffer lines" },
   m = { ":FzfLua marks<CR>", "Marks" },
   r = { ":FzfLua registers<CR>", "Registers" },
+  l = { ":FzfLua live_grep<CR>", "Live grep" },
 }
 
 --- Git
@@ -89,6 +90,13 @@ lvim.builtin.which_key.mappings["g"] = {
   name = "+Git",
   g = { ":LazyGit<CR>", "Open LazyGit" },
   y = { "Copy code URL" },
+  d = {
+    name = "+Diffview",
+    o = { ":DiffviewOpen<CR>", "Open" },
+    c = { ":DiffviewClose<CR>", "Close" },
+    f = { ":DiffviewFileHistory %<CR>", "Current file" },
+    b = { ":DiffviewFileHistory<CR>", "Current branch" },
+  },
 }
 
 --- Test
@@ -173,4 +181,5 @@ lvim.plugins = {
   { "kevinhwang91/nvim-bqf" }, -- Better quickfix list
   { "ibhagwan/fzf-lua" },
   { "kdheepak/lazygit.nvim" },
+  { "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" }
 }
