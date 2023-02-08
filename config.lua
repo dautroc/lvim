@@ -49,18 +49,20 @@ lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
 
 --- Quickfix
 lvim.keys.normal_mode["co"] = ":copen<CR>"
+lvim.keys.normal_mode["cc"] = ":cclose<CR>"
 lvim.keys.normal_mode["cn"] = ":cn<CR>"
 lvim.keys.normal_mode["cp"] = ":cp<CR>"
 
 --- Misc
+lvim.keys.normal_mode["<space><space>"] = ":FzfLua files<CR>"
 lvim.keys.normal_mode["#"] = "*"
 vim.g['test#strategy'] = 'vimux'
 
 --- Files
-lvim.builtin.which_key.mappings["<space>"] = { "<cmd>Telescope find_files<CR>", "Find files" }
 lvim.builtin.which_key.mappings["f"] = {
   name = "+Files",
-  f = { ":Telescope find_files<CR>", "Find" },
+  f = { ":FzfLua files<CR>", "Find" },
+  r = { ":FzfLua oldfiles<CR>", "Recent" },
 }
 
 --- Buffers
@@ -68,17 +70,22 @@ lvim.builtin.which_key.mappings["b"] = {
   name = "+Buffers",
   b = { ":bp<CR>", "Previous" },
   n = { ":bn<CR>", "Next" },
-  f = { ":Telescope buffers<CR>", "Find" },
+  f = { ":FzfLua buffers<CR>", "Find" },
 }
 --- Search
-lvim.builtin.which_key.mappings["st"] = {
-  ":Telescope grep_string search=<CR>",
-  "Search text"
+lvim.builtin.which_key.mappings["s"] = {
+  name = "+Search",
+  t = { ":FzfLua grep_projectCR>", "Text" },
+  c = { ":FzfLua grep_cword<CR>", "Current word" },
+  k = { ":FzfLua keymaps<CR>", "Keymaps" },
+  h = { ":FzfLua help_tags<CR>", "Help tags" },
+  b = { ":FzfLua blines<CR>", "Current buffer lines" },
+  l = { ":FzfLua grep_last<CR>", "Last search" },
 }
 
 --- Git
 lvim.builtin.which_key.mappings["go"] = {
-  "<cmd>lua require('gitlinker').get_buf_range_url('n')",
+  "<cmd>lua require('gitlinker').get_buf_range_url('n')<CR>",
   "Open in browser"
 }
 
@@ -153,6 +160,7 @@ lvim.plugins = {
   { "vim-test/vim-test", dependencies = "preservim/vimux" },
   { "tiagovla/scope.nvim" }, -- Using tab
   { "kevinhwang91/nvim-bqf" }, -- Better quickfix list
+  { 'ibhagwan/fzf-lua' },
 }
 
 lvim.builtin.telescope.on_config_done = function(telescope)
