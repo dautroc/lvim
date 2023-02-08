@@ -183,26 +183,6 @@ lvim.builtin.telescope.on_config_done = function(telescope)
           ["<C-k>"] = actions.move_selection_previous,
         }
       },
-      vimgrep_arguments = {
-        'rg',
-        '--color=never',
-        '--no-heading',
-        '--with-filename',
-        '--line-number',
-        '--column',
-        '--smart-case',
-        '--ignore',
-        '--hidden',
-        '--fixed-strings',
-      },
-    },
-    pickers = {
-      find_files = {
-        theme = "ivy",
-      },
-      grep_string = {
-        theme = "ivy",
-      },
     },
   })
 
