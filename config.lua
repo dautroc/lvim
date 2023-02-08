@@ -64,8 +64,6 @@ lvim.builtin.which_key.mappings["f"] = {
   name = "+File",
   f = { ":FzfLua files<CR>", "Find" },
   r = { ":FzfLua oldfiles<CR>", "Recent" },
-  a = { ":lua require('harpoon.mark').add_file()<CR>", "Add bookmark" },
-  b = { ":lua require('harpoon.ui').toggle_quick_menu()<CR>", "Open bookmark" },
   t = {
     name = "+Test",
     n = { "<cmd>TestNearest<CR>", "Test Nearest" },
@@ -124,6 +122,14 @@ lvim.builtin.which_key.mappings["m"] = {
   r = { ":FzfLua resume<CR>", "Resume last command" },
   s = { ":FzfLua spell_suggest<CR>", "Spell suggest" },
 }
+
+--- Bookmarks
+-- lvim.builtin.which_key.mappings["B"] = {
+--   name = "+Bookmark",
+--   j = { ":FzfLua jumps<CR>", "Jumps" },
+--   r = { ":FzfLua resume<CR>", "Resume last command" },
+--   s = { ":FzfLua spell_suggest<CR>", "Spell suggest" },
+-- }
 
 ---------------
 --- PLUGINS ---
@@ -219,55 +225,33 @@ lvim.plugins = {
   { "ibhagwan/fzf-lua" },
   { "kdheepak/lazygit.nvim" },
   { "nvim-treesitter/nvim-treesitter-textobjects" },
-  { "ThePrimeagen/harpoon", dependencies = { "nvim-lua/plenary.nvim" } },
   { "MattesGroeger/vim-bookmarks" },
-  { "kevinhwang91/nvim-hlslens", config = function() require('hlslens').setup() end },
   { "roobert/search-replace.nvim", config = function() require('search-replace').setup() end },
 }
-
--- lvim.builtin.telescope.on_config_done = function(telescope)
--- pcall(telescope.load_extension, "vim_bookmarks")
--- end
 
 lvim.builtin.treesitter.on_config_done = function()
   require 'nvim-treesitter.configs'.setup {
     textobjects = {
       select = {
         enable = true,
-
-        -- Automatically jump forward to textobj, similar to targets.vim
         lookahead = true,
-
         keymaps = {
-          -- You can use the capture groups defined in textobjects.scm
           ["af"] = { query = "@function.outer", desc = "Select outer function" },
           ["if"] = { query = "@function.inner", desc = "Select inner function" },
           ["ac"] = { query = "@class.outer", desc = "Select outer class" },
           ["ic"] = { query = "@class.inner", desc = "Select inner class" },
         },
-        -- You can choose the select mode (default is charwise 'v')
-        --
-        -- Can also be a function which gets passed a table with the keys
-        -- * query_string: eg '@function.inner'
-        -- * method: eg 'v' or 'o'
-        -- and should return the mode ('v', 'V', or '<c-v>') or a table
-        -- mapping query_strings to modes.
         selection_modes = {
           ['@parameter.outer'] = 'v', -- charwise
           ['@function.outer'] = 'V', -- linewise
           ['@class.outer'] = '<c-v>', -- blockwise
         },
-        -- If you set this to `true` (default is `false`) then any textobject is
-        -- extended to include preceding or succeeding whitespace. Succeeding
-        -- whitespace has priority in order to act similarly to eg the built-in
-        -- `ap`.
-        --
-        -- Can also be a function which gets passed a table with the keys
-        -- * query_string: eg '@function.inner'
-        -- * selection_mode: eg 'v'
-        -- and should return true of false
         include_surrounding_whitespace = true,
       },
     },
   }
 end
+
+-- lvim.builtin.telescope.on_config_done = function(telescope)
+-- pcall(telescope.load_extension, "vim_bookmarks")
+-- end
