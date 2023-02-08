@@ -125,8 +125,8 @@ lvim.plugins = {
     event = "BufRead",
     config = function()
       require("hop").setup()
-      vim.api.nvim_set_keymap("n", "s", ":HopChar2<cr>", { silent = true })
-      vim.api.nvim_set_keymap("n", "S", ":HopWord<cr>", { silent = true })
+      -- vim.api.nvim_set_keymap("n", "<Tab>", ":HopChar2<cr>", { silent = true })
+      vim.api.nvim_set_keymap("n", "<Tab>", ":HopWord<cr>", { silent = true })
     end,
   },
   { "tpope/vim-surround" },
@@ -212,12 +212,18 @@ lvim.plugins = {
   { "nvim-treesitter/nvim-treesitter-textobjects" },
   { "ThePrimeagen/harpoon", dependencies = { "nvim-lua/plenary.nvim" } },
   { "MattesGroeger/vim-bookmarks" },
-  { "kevinhwang91/nvim-hlslens" },
+  {
+    "kevinhwang91/nvim-hlslens",
+    config = function()
+      require('hlslens').setup()
+    end
+  },
+  { "roobert/search-replace.nvim" },
 }
 
-lvim.builtin.telescope.on_config_done = function(telescope)
-  -- pcall(telescope.load_extension, "vim_bookmarks")
-end
+-- lvim.builtin.telescope.on_config_done = function(telescope)
+-- pcall(telescope.load_extension, "vim_bookmarks")
+-- end
 
 lvim.builtin.treesitter.on_config_done = function()
   require 'nvim-treesitter.configs'.setup {
