@@ -121,6 +121,7 @@ lvim.builtin.which_key.mappings["m"] = {
   j = { ":FzfLua jumps<CR>", "Jumps" },
   r = { ":FzfLua resume<CR>", "Resume last command" },
   s = { ":FzfLua spell_suggest<CR>", "Spell suggest" },
+  m = { ":MarkdownPreview solarized-light<CR>", "Markdown Preview" },
 }
 
 ---------------
@@ -164,7 +165,6 @@ lvim.plugins = {
     end,
     dependencies = "nvim-lua/plenary.nvim",
   },
-  { "npxbr/glow.nvim", ft = { "markdown" } }, -- Preview markdown
   { "p00f/nvim-ts-rainbow" },
   {
     "karb94/neoscroll.nvim",
@@ -219,6 +219,7 @@ lvim.plugins = {
   { "nvim-treesitter/nvim-treesitter-textobjects" },
   { "MattesGroeger/vim-bookmarks" },
   { "roobert/search-replace.nvim", config = function() require('search-replace').setup() end },
+  { "davidgranstrom/nvim-markdown-preview" }
 }
 
 lvim.builtin.treesitter.on_config_done = function()
