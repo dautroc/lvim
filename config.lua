@@ -58,6 +58,17 @@ lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
 lvim.keys.normal_mode["<space><space>"] = ":FzfLua files<CR>"
 lvim.keys.normal_mode["#"] = "*"
 vim.g['test#strategy'] = 'vimux'
+-- Window
+lvim.builtin.which_key.mappings["w"] = {
+  name = "+Window",
+  c = { ":q<CR>", "Close" },
+  h = { "<C-w>h", "Navigate left" },
+  j = { "<C-w>j", "Navigate down" },
+  k = { "<C-w>k", "Navigate up" },
+  l = { "<C-w>l", "Navigate right" },
+  v = { "<C-w>v", "Vertical split" },
+  s = { "<C-w>s", "Horizontal split" },
+}
 
 --- File
 lvim.builtin.which_key.mappings["f"] = {
@@ -75,6 +86,7 @@ lvim.builtin.which_key.mappings["f"] = {
 --- Buffer
 lvim.builtin.which_key.mappings["b"] = {
   name = "+Buffer",
+  s = { ":w<CR>", "Save" },
   b = { ":bp<CR>", "Previous" },
   n = { ":bn<CR>", "Next" },
   f = { ":FzfLua buffers<CR>", "Find" },
