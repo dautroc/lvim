@@ -56,11 +56,16 @@ lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
 
 --- Misc
 lvim.keys.normal_mode["<space><space>"] = ":FzfLua files<CR>"
+lvim.builtin.which_key.mappings["q"] = {
+  name = "+quit/session",
+  c = { ":qa<CR>", "Quit Lvim" },
+}
 lvim.keys.normal_mode["#"] = "*"
 vim.g['test#strategy'] = 'vimux'
+
 -- Window
 lvim.builtin.which_key.mappings["w"] = {
-  name = "+Window",
+  name = "+window",
   c = { ":q<CR>", "Close" },
   h = { "<C-w>h", "Navigate left" },
   j = { "<C-w>j", "Navigate down" },
@@ -72,15 +77,11 @@ lvim.builtin.which_key.mappings["w"] = {
 
 --- File
 lvim.builtin.which_key.mappings["f"] = {
-  name = "+File",
+  name = "+file",
+  s = { ":w<CR>", "Save" },
   f = { ":FzfLua files<CR>", "Find" },
   r = { ":FzfLua oldfiles<CR>", "Recent" },
-  y = { ":let @+ = expand('%')<CR>", "Copy relative path" },
-  t = {
-    name = "+Test",
-    n = { "<cmd>TestNearest<CR>", "Test Nearest" },
-    f = { "<cmd>TestFile<CR>", "Test File" },
-  }
+  y = { ":let @+ = expand('%')<CR>", "Yank file path" },
 }
 
 --- Buffer
