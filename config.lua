@@ -82,7 +82,7 @@ lvim.builtin.which_key.mappings["b"] = {
 --- Search
 lvim.builtin.which_key.mappings["s"] = {
   name = "+Search",
-  t = { ":FzfLua grep_visual<CR>", "Text" },
+  t = { ":FzfLua live_grep<CR>", "Text" },
   c = { ":FzfLua grep_cword<CR>", "Current word" },
   k = { ":FzfLua keymaps<CR>", "Keymaps" },
   h = { ":FzfLua help_tags<CR>", "Help tags" },
@@ -133,7 +133,7 @@ lvim.plugins = {
     event = "BufRead",
     config = function()
       require("hop").setup()
-      vim.api.nvim_set_keymap("n", "S", ":HopChar2<cr>", { silent = true })
+      vim.api.nvim_set_keymap("n", "s", ":HopChar2<cr>", { silent = true })
       -- vim.api.nvim_set_keymap("n", "<Tab>", ":HopWord<cr>", { silent = true })
     end,
   },
