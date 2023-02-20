@@ -58,11 +58,16 @@ lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
 lvim.keys.normal_mode["<space><space>"] = ":FzfLua files<CR>"
 lvim.builtin.which_key.mappings["q"] = {
   name = "+quit/session",
-  c = { ":qa<CR>", "Quit Lvim" },
+  q = { ":qa<CR>", "Quit Lvim" },
 }
 lvim.keys.normal_mode["#"] = "*"
 vim.g['test#strategy'] = 'vimux'
 
+-- Open
+lvim.builtin.which_key.mappings["o"] = {
+  name = "+open",
+  e = { "<space>e", "Quit Lvim" },
+}
 -- Window
 lvim.builtin.which_key.mappings["w"] = {
   name = "+window",
@@ -88,10 +93,11 @@ lvim.builtin.which_key.mappings["f"] = {
 lvim.builtin.which_key.mappings["b"] = {
   name = "+Buffer",
   s = { ":w<CR>", "Save" },
-  b = { ":bp<CR>", "Previous" },
+  p = { ":bp<CR>", "Previous" },
   n = { ":bn<CR>", "Next" },
-  f = { ":FzfLua buffers<CR>", "Find" },
+  b = { ":FzfLua buffers<CR>", "Find" },
 }
+
 --- Search
 lvim.builtin.which_key.mappings["s"] = {
   name = "+Search",
