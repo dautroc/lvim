@@ -86,6 +86,7 @@ lvim.builtin.which_key.mappings["f"] = {
   f = { ":FzfLua files<CR>", "Find" },
   r = { ":FzfLua oldfiles<CR>", "Recent" },
   y = { ":let @+ = expand('%')<CR>", "Yank file path" },
+  Y = { ":let @+ = join([expand('%'),  line('.')], ':')<CR>", "Yank file path with line number" },
   t = { ":AV<CR>", "Open test file" },
 }
 
