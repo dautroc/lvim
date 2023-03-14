@@ -86,8 +86,7 @@ lvim.builtin.which_key.mappings["f"] = {
   f = { ":FzfLua files<CR>", "Find" },
   r = { ":FzfLua oldfiles<CR>", "Recent" },
   y = { ":let @+ = expand('%')<CR>", "Yank file path" },
-  t = { ":NvimTreeToggle<CR>", "Toggle file tree" },
-  p = { ":AV<CR>", "Open test file" },
+  t = { ":AV<CR>", "Open test file" },
 }
 
 --- Buffer
@@ -244,7 +243,18 @@ lvim.plugins = {
       })
     end,
   }, -- Better quickfix list
-  { "ibhagwan/fzf-lua" },
+  { "ibhagwan/fzf-lua",
+    config = function()
+      require("fzf-lua").setup({
+        grep = {
+          rg_opts = "--sort-files --hidden --column --line-number --no-heading --color=always --smart-case -g '!{.git,node_modules}/*'",
+          rg_glob         = true,       -- enable glob parsing by default to all grep providers? (default:false)
+          glob_flag       = "--iglob",  -- for case sensitive globs use '--glob'
+          glob_separator  = "%s%-%-"    -- query separator pattern (lua): ' --'
+        },
+      })
+    end
+  },
   { "kdheepak/lazygit.nvim" },
   { "nvim-treesitter/nvim-treesitter-textobjects" },
   { "MattesGroeger/vim-bookmarks" },
@@ -274,19 +284,6 @@ lvim.builtin.treesitter.on_config_done = function()
     },
   }
 end
-
-lvim.builtin.FzfLua.on_config_done = function()
-  require("fzf-lua").setup({
-    grep = {
-      rg_opts = "--sort-files --hidden --column --line-number --no-heading --color=always --smart-case -g '!{.git,node_modules}/*'",
-      rg_glob         = true,        -- enable glob parsing by default to all
-                                    -- grep providers? (default:false)
-      glob_flag       = "--iglob",  -- for case sensitive globs use '--glob'
-      glob_separator  = "%s%-%-"    -- query separator pattern (lua): ' --'
-    }
-  })
-end
-
 -- lvim.builtin.telescope.on_config_done = function(telescope)
 -- pcall(telescope.load_extension, "vim_bookmarks")
 -- end
