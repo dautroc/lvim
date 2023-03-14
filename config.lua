@@ -145,6 +145,14 @@ lvim.builtin.which_key.mappings["m"] = {
   d = { "<s-o>byebug<ESC>", "Add debug point" },
 }
 
+lvim.builtin.which_key.mappings["j"] = {
+  name = "+Jump",
+  j = "Jump 2 Chars",
+  p = "Jump Pattern",
+  l = "Jump Line",
+  r = { ":FzfLua jumps<CR>","Jump Recent" },
+}
+
 ---------------
 --- PLUGINS ---
 ---------------
@@ -155,7 +163,7 @@ lvim.plugins = {
     config = function()
       require("hop").setup()
       vim.api.nvim_set_keymap("n", "<space>jj", ":HopChar2<cr>", { silent = true })
-      vim.api.nvim_set_keymap("n", "<space>jk", ":HopPattern<cr>", { silent = true })
+      vim.api.nvim_set_keymap("n", "<space>jp", ":HopPattern<cr>", { silent = true })
       vim.api.nvim_set_keymap("n", "<space>jl", ":HopLine<cr>", { silent = true })
     end,
   },
