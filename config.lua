@@ -14,7 +14,9 @@ lvim.format_on_save = {
 
 lvim.colorscheme = "tokyonight"
 lvim.leader = "space"
-lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["P"] = {}
+lvim.builtin.which_key.mappings["d"] = {} -- Turn off debug
+lvim.builtin.which_key.mappings["p"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "startify"
 lvim.builtin.terminal.active = true
@@ -49,29 +51,25 @@ lvim.keys.normal_mode["tj"] = ":tabprev<CR>"
 lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
 
 --- Quickfix
--- lvim.keys.normal_mode["co"] = ":copen<CR>"
--- lvim.keys.normal_mode["cc"] = ":cclose<CR>"
--- lvim.keys.normal_mode["cn"] = ":cn<CR>"
--- lvim.keys.normal_mode["cp"] = ":cp<CR>"
+lvim.keys.normal_mode["co"] = ":copen<CR>"
+lvim.keys.normal_mode["cc"] = ":cclose<CR>"
+lvim.keys.normal_mode["cn"] = ":cn<CR>"
+lvim.keys.normal_mode["cp"] = ":cp<CR>"
 
---- Misc
+--- No parent
 lvim.keys.normal_mode["<space><space>"] = ":FzfLua files<CR>"
-lvim.builtin.which_key.mappings["q"] = {
-  name = "+quit/session",
-  q = { ":qa<CR>", "Quit Lvim" },
-}
 lvim.keys.normal_mode["#"] = "*"
 vim.g['test#strategy'] = 'vimux'
 
--- Open
-lvim.builtin.which_key.mappings["o"] = {
-  name = "+open",
-  e = { "<space>e", "Quit Lvim" },
+lvim.builtin.which_key.mappings["q"] = {
+  name = "+Quit/Session",
+  q = { ":qa<CR>", "Quit Lvim" },
 }
+
 -- Window
 lvim.builtin.which_key.mappings["w"] = {
-  name = "+window",
-  c = { ":q<CR>", "Close" },
+  name = "+Window",
+  d = { ":q<CR>", "Close" },
   h = { "<C-w>h", "Navigate left" },
   j = { "<C-w>j", "Navigate down" },
   k = { "<C-w>k", "Navigate up" },
@@ -82,11 +80,13 @@ lvim.builtin.which_key.mappings["w"] = {
 
 --- File
 lvim.builtin.which_key.mappings["f"] = {
-  name = "+file",
+  name = "+File",
   s = { ":w<CR>", "Save" },
   f = { ":FzfLua files<CR>", "Find" },
   r = { ":FzfLua oldfiles<CR>", "Recent" },
   y = { ":let @+ = expand('%')<CR>", "Yank file path" },
+  t = { ":NvimTreeToggle<CR>", "Toggle file tree" },
+  p = { ":AV<CR>", "Open test file" },
 }
 
 --- Buffer
@@ -107,6 +107,7 @@ lvim.builtin.which_key.mappings["s"] = {
   h = { ":FzfLua help_tags<CR>", "Help tags" },
   b = { ":FzfLua blines<CR>", "Current buffer lines" },
   l = { ":FzfLua live_grep<CR>", "Live grep" },
+  v = { ":FzfLua grep_visual<CR>", "Grep visual" },
 }
 
 --- Replace
@@ -152,8 +153,9 @@ lvim.plugins = {
     event = "BufRead",
     config = function()
       require("hop").setup()
-      vim.api.nvim_set_keymap("n", "s", ":HopChar2<cr>", { silent = true })
-      -- vim.api.nvim_set_keymap("n", "<Tab>", ":HopWord<cr>", { silent = true })
+      vim.api.nvim_set_keymap("n", "<space>jj", ":HopChar2<cr>", { silent = true })
+      vim.api.nvim_set_keymap("n", "<space>jk", ":HopPattern<cr>", { silent = true })
+      vim.api.nvim_set_keymap("n", "<space>jl", ":HopLine<cr>", { silent = true })
     end,
   },
   { "tpope/vim-surround" },
