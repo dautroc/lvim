@@ -16,10 +16,12 @@ lvim.colorscheme = "tokyonight"
 lvim.leader = "space"
 lvim.builtin.which_key.mappings["P"] = {}
 lvim.builtin.which_key.mappings["d"] = {} -- Turn off debug
+lvim.builtin.which_key.mappings["q"] = { '<cmd>lua require("user.functions").smart_quit()<CR>', "Quit" }
+lvim.builtin.which_key.mappings[";"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" }
 lvim.builtin.which_key.mappings["p"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["<space>"] = { ":FzfLua files<CR>", "Find files" }
+lvim.builtin.which_key.mappings["/"] = { ":FzfLua grep_visual<CR>", "Find text in project" }
 lvim.builtin.alpha.active = true
-lvim.builtin.alpha.mode = "startify"
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
@@ -58,15 +60,14 @@ lvim.keys.normal_mode["cn"] = ":cn<CR>"
 lvim.keys.normal_mode["cp"] = ":cp<CR>"
 
 --- No parent
--- lvim.keys.normal_mode["<space><space>"] = ":FzfLua files<CR>"
 lvim.keys.normal_mode["#"] = "*"
 vim.g['test#strategy'] = 'vimux'
 
-lvim.builtin.which_key.mappings["q"] = {
-  name = "+Quit/Session",
-  q = { ":qa<CR>", "Quit Lvim" },
-  Q = { ":qa!<CR>", "Quit Lvim with no save" },
-}
+-- lvim.builtin.which_key.mappings["q"] = {
+--   name = "+Quit/Session",
+--   q = { ":qa<CR>", "Quit Lvim" },
+--   Q = { ":qa!<CR>", "Quit Lvim with no save" },
+-- }
 
 -- Window
 lvim.builtin.which_key.mappings["w"] = {
