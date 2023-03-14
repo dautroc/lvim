@@ -1,7 +1,7 @@
 -- vim options
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2
-vim.opt.relativenumber = true
+-- vim.opt.relativenumber = true
 vim.opt.inccommand = "split"
 
 -- general
@@ -17,6 +17,7 @@ lvim.leader = "space"
 lvim.builtin.which_key.mappings["P"] = {}
 lvim.builtin.which_key.mappings["d"] = {} -- Turn off debug
 lvim.builtin.which_key.mappings["p"] = { "<cmd>Telescope projects<CR>", "Projects" }
+lvim.builtin.which_key.mappings["<space>"] = { ":FzfLua files<CR>", "Find files" }
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "startify"
 lvim.builtin.terminal.active = true
@@ -57,7 +58,7 @@ lvim.keys.normal_mode["cn"] = ":cn<CR>"
 lvim.keys.normal_mode["cp"] = ":cp<CR>"
 
 --- No parent
-lvim.keys.normal_mode["<space><space>"] = ":FzfLua files<CR>"
+-- lvim.keys.normal_mode["<space><space>"] = ":FzfLua files<CR>"
 lvim.keys.normal_mode["#"] = "*"
 vim.g['test#strategy'] = 'vimux'
 
