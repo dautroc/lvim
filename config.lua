@@ -64,6 +64,7 @@ vim.g['test#strategy'] = 'vimux'
 lvim.builtin.which_key.mappings["q"] = {
   name = "+Quit/Session",
   q = { ":qa<CR>", "Quit Lvim" },
+  Q = { ":qa!<CR>", "Quit Lvim with no save" },
 }
 
 -- Window
@@ -101,13 +102,12 @@ lvim.builtin.which_key.mappings["b"] = {
 --- Search
 lvim.builtin.which_key.mappings["s"] = {
   name = "+Search",
-  t = { ":FzfLua live_grep<CR>", "Text" },
   c = { ":FzfLua grep_cword<CR>", "Current word" },
   k = { ":FzfLua keymaps<CR>", "Keymaps" },
   h = { ":FzfLua help_tags<CR>", "Help tags" },
   b = { ":FzfLua blines<CR>", "Current buffer lines" },
   l = { ":FzfLua live_grep<CR>", "Live grep" },
-  v = { ":FzfLua grep_visual<CR>", "Grep visual" },
+  t = { ":FzfLua grep_visual<CR>", "Text" },
 }
 
 --- Replace
@@ -142,6 +142,7 @@ lvim.builtin.which_key.mappings["m"] = {
   r = { ":FzfLua resume<CR>", "Resume last command" },
   s = { ":FzfLua spell_suggest<CR>", "Spell suggest" },
   m = { ":MarkdownPreview solarized-light<CR>", "Markdown Preview" },
+  d = { "<s-o>byebug<ESC>", "Add debug point" },
 }
 
 ---------------
@@ -264,6 +265,18 @@ lvim.builtin.treesitter.on_config_done = function()
       },
     },
   }
+end
+
+lvim.builtin.FzfLua.on_config_done = function()
+  require("fzf-lua").setup({
+    grep = {
+      rg_opts = "--sort-files --hidden --column --line-number --no-heading --color=always --smart-case -g '!{.git,node_modules}/*'",
+      rg_glob         = true,        -- enable glob parsing by default to all
+                                    -- grep providers? (default:false)
+      glob_flag       = "--iglob",  -- for case sensitive globs use '--glob'
+      glob_separator  = "%s%-%-"    -- query separator pattern (lua): ' --'
+    }
+  })
 end
 
 -- lvim.builtin.telescope.on_config_done = function(telescope)
