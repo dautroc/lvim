@@ -1,8 +1,8 @@
 lvim.builtin.which_key.mappings["P"] = {}
 lvim.builtin.which_key.mappings["d"] = {} -- Turn off debug
 lvim.builtin.which_key.mappings["p"] = { "<cmd>Telescope projects<CR>", "Projects" }
-lvim.builtin.which_key.mappings["<space>"] = { ":FzfLua files<CR>", "Find files" }
-lvim.builtin.which_key.mappings["/"] = { ":FzfLua grep_visual<CR>", "Find text in project" }
+lvim.builtin.which_key.mappings["<space>"] = { ":Telescope find_files<CR>", "Find files" }
+lvim.builtin.which_key.mappings["/"] = { ":Telescope grep_string<CR>", "Find string" }
 
 ---- Undo break points
 lvim.keys.insert_mode['_'] = '_<C-g>u'
@@ -31,8 +31,6 @@ lvim.keys.normal_mode["cn"] = ":cn<CR>"
 lvim.keys.normal_mode["cp"] = ":cp<CR>"
 
 lvim.keys.normal_mode["#"] = "*"
-lvim.keys.normal_mode["<space>;"] = "gcc"
-lvim.keys.visual_mode["<space>;"] = "gc"
 
 lvim.builtin.which_key.mappings["q"] = {
   name = "+Quit/Session",
@@ -56,8 +54,8 @@ lvim.builtin.which_key.mappings["w"] = {
 lvim.builtin.which_key.mappings["f"] = {
   name = "+File",
   s = { ":w<CR>", "Save" },
-  f = { ":FzfLua files<CR>", "Find" },
-  r = { ":FzfLua oldfiles<CR>", "Recent" },
+  f = { "<cmd>Telescope find_files<cr>", "Find files" },
+  r = { "<cmd>Telescope oldfiles<cr>", "Recent files" },
   y = { ":let @+ = expand('%')<CR>", "Yank file path" },
   Y = { ":let @+ = join([expand('%'),  line('.')], ':')<CR>", "Yank file path with line number" },
   t = { ":AV<CR>", "Open test file" },
@@ -69,18 +67,21 @@ lvim.builtin.which_key.mappings["b"] = {
   s = { ":w<CR>", "Save" },
   p = { ":bp<CR>", "Previous" },
   n = { ":bn<CR>", "Next" },
-  b = { ":FzfLua buffers<CR>", "Find" },
+  b = { ":Telescope buffers<CR>", "Find" },
 }
 
 --- Search
 lvim.builtin.which_key.mappings["s"] = {
   name = "+Search",
-  c = { ":FzfLua grep_cword<CR>", "Current word" },
-  k = { ":FzfLua keymaps<CR>", "Keymaps" },
-  h = { ":FzfLua help_tags<CR>", "Help tags" },
-  b = { ":FzfLua blines<CR>", "Current buffer lines" },
-  l = { ":FzfLua live_grep<CR>", "Live grep" },
-  t = { ":FzfLua grep_visual<CR>", "Text" },
+  s = { "<cmd>Telescope grep_string<cr>", "Find String" },
+  h = { "<cmd>Telescope help_tags<cr>", "Help" },
+  t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
+  k = { "<cmd>Telescope keymaps<cr>", "Keymaps" },
+  c = { "<cmd>Telescope colorscheme<cr>", "Colorscheme" },
+  C = { "<cmd>Telescope commands<cr>", "Commands" },
+  H = { "<cmd>Telescope highlights<cr>", "Highlights" },
+  l = { "<cmd>Telescope resume<cr>", "Last Search" },
+  r = { "<cmd>Telescope registers<cr>", "Registers" },
 }
 
 --- Replace
@@ -112,9 +113,7 @@ lvim.builtin.which_key.mappings["t"] = {
 --- Misc
 lvim.builtin.which_key.mappings["m"] = {
   name = "+Misc",
-  j = { ":FzfLua jumps<CR>", "Jumps" },
-  r = { ":FzfLua resume<CR>", "Resume last command" },
-  s = { ":FzfLua spell_suggest<CR>", "Spell suggest" },
+  s = { ":Telescope spell_suggest<CR>", "Spell suggest" },
   m = { ":MarkdownPreview solarized-light<CR>", "Markdown Preview" },
   d = { "<s-o>byebug<ESC>", "Add debug point" },
 }
@@ -124,5 +123,5 @@ lvim.builtin.which_key.mappings["j"] = {
   j = "Jump 2 Chars",
   p = "Jump Pattern",
   l = "Jump Line",
-  r = { ":FzfLua jumps<CR>","Jump Recent" },
+  r = { ":Telescope jumplist<CR>","Jump list" },
 }

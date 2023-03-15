@@ -86,18 +86,6 @@ lvim.plugins = {
       })
     end,
   }, -- Better quickfix list
-  { "ibhagwan/fzf-lua",
-    config = function()
-      require("fzf-lua").setup({
-        grep = {
-          rg_opts = "--sort-files --hidden --column --line-number --no-heading --color=always --smart-case -g '!{.git,node_modules}/*'",
-          rg_glob         = true,       -- enable glob parsing by default to all grep providers? (default:false)
-          glob_flag       = "--iglob",  -- for case sensitive globs use '--glob'
-          glob_separator  = "%s%-%-"    -- query separator pattern (lua): ' --'
-        },
-      })
-    end
-  },
   { "kdheepak/lazygit.nvim" },
   { "nvim-treesitter/nvim-treesitter-textobjects" },
   { "MattesGroeger/vim-bookmarks" },
