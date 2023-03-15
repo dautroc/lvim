@@ -1,5 +1,6 @@
 reload "user.config"
 reload "user.plugins"
+reload "user.bookmark"
 reload "user.telescope"
 reload "user.key_binding"
 reload "user.after_config"

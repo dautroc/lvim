@@ -139,7 +139,7 @@ end
 local m_mappings = {
   a = { "<cmd>silent BookmarkAnnotate<cr>", "Annotate" },
   c = { "<cmd>silent BookmarkClear<cr>", "Clear" },
-  b = { "<cmd>silent BookmarkToggle<cr>", "Toggle" },
+  t = { "<cmd>silent BookmarkToggle<cr>", "Toggle" },
   x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
   j = { "<cmd>silent BookmarkNext<cr>", "Next" },
   k = { "<cmd>silent BookmarkPrev<cr>", "Prev" },
