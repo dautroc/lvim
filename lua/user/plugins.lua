@@ -98,5 +98,12 @@ lvim.plugins = {
   --     "nvim-telescope/telescope.nvim"
   --   }
   -- }
-  { "ThePrimeagen/harpoon" }
+  { "ThePrimeagen/harpoon" },
+  {
+    'LukasPietzschmann/telescope-tabs',
+    dependencies = { 'nvim-telescope/telescope.nvim' },
+    config = function()
+      require'telescope-tabs'.setup()
+    end
+  }
 }

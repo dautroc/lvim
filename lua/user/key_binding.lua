@@ -20,15 +20,11 @@ lvim.keys.insert_mode[' '] = ' <C-g>u'
 lvim.keys.insert_mode["jj"] = "<esc>"
 
 ---- Tab navigator
+lvim.keys.normal_mode["tn"] = ":tabnew<CR>"
 lvim.keys.normal_mode["tk"] = ":tabnext<CR>"
 lvim.keys.normal_mode["tj"] = ":tabprev<CR>"
 lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
-
---- Quickfix
-lvim.keys.normal_mode["co"] = ":copen<CR>"
-lvim.keys.normal_mode["cc"] = ":cclose<CR>"
-lvim.keys.normal_mode["cn"] = ":cn<CR>"
-lvim.keys.normal_mode["cp"] = ":cp<CR>"
+lvim.keys.normal_mode["tl"] = "<cmd>lua require('telescope-tabs').list_tabs()<cr>"
 
 lvim.keys.normal_mode["#"] = "*"
 
@@ -106,9 +102,16 @@ lvim.builtin.which_key.mappings["g"] = {
 
 --- Test
 lvim.builtin.which_key.mappings["t"] = {
-  name = "+Test",
+  name = "+Test/Tab",
   n = { "<cmd>TestNearest<CR>", "Test Nearest" },
   f = { "<cmd>TestFile<CR>", "Test File" },
+  t = {
+    "<cmd>lua require('telescope').extensions['telescope-tabs'].list_tabs(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Tabs'})<cr>",
+    "Find Tab",
+  },
+  n = { "<cmd>tabnew %<cr>", "New Tab" },
+  c = { "<cmd>tabclose<cr>", "Close Tab" },
+  o = { "<cmd>tabonly<cr>", "Only Tab" },
 }
 --- Misc
 lvim.builtin.which_key.mappings["m"] = {
@@ -147,11 +150,11 @@ local m_mappings = {
   x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
   j = { "<cmd>silent BookmarkNext<cr>", "Next" },
   k = { "<cmd>silent BookmarkPrev<cr>", "Prev" },
-  S = { "<cmd>silent BookmarkShowAll<cr>", "Prev" },
+  s = { "<cmd>silent BookmarkShowAll<cr>", "Show All" },
 
   -- Harpoon
   m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
-  s = { "<cmd>Telescope harpoon marks<cr>", "Search Files" },
+  f = { "<cmd>Telescope harpoon marks<cr>", "Search Files" },
   [";"] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
 }
 
