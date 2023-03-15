@@ -102,16 +102,9 @@ lvim.builtin.which_key.mappings["g"] = {
 
 --- Test
 lvim.builtin.which_key.mappings["t"] = {
-  name = "+Test/Tab",
+  name = "+Test",
   n = { "<cmd>TestNearest<CR>", "Test Nearest" },
   f = { "<cmd>TestFile<CR>", "Test File" },
-  t = {
-    "<cmd>lua require('telescope').extensions['telescope-tabs'].list_tabs(require('telescope.themes').get_dropdown{previewer = false, initial_mode='normal', prompt_title='Tabs'})<cr>",
-    "Find Tab",
-  },
-  n = { "<cmd>tabnew %<cr>", "New Tab" },
-  c = { "<cmd>tabclose<cr>", "Close Tab" },
-  o = { "<cmd>tabonly<cr>", "Only Tab" },
 }
 --- Misc
 lvim.builtin.which_key.mappings["m"] = {
