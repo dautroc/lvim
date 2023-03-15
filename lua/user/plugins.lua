@@ -88,11 +88,14 @@ lvim.plugins = {
   { "MattesGroeger/vim-bookmarks" },
   { "roobert/search-replace.nvim", config = function() require('search-replace').setup() end },
   { "davidgranstrom/nvim-markdown-preview" },
-  { "jackMort/ChatGPT.nvim",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    }
-  }
+  -- { "jackMort/ChatGPT.nvim",
+  --   config = function()
+  --     require("chatgpt").setup()
+  --   end,
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-telescope/telescope.nvim"
+  --   }
+  -- }
 }
