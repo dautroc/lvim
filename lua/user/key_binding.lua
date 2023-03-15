@@ -36,14 +36,14 @@ lvim.keys.visual_mode["<space>;"] = "gc"
 
 lvim.builtin.which_key.mappings["q"] = {
   name = "+Quit/Session",
-  q = { ":qa<CR>", "Quit Lvim" },
+  q = { "<cmd>lua require('user.functions').smart_quit('all')<CR>", "Quit Lvim" },
   Q = { ":qa!<CR>", "Quit Lvim with no save" },
 }
 
 -- Window
 lvim.builtin.which_key.mappings["w"] = {
   name = "+Window",
-  d = { "<cmd>lua require('user.functions').smart_quit()<CR>", "Close" },
+  d = { "<cmd>lua require('user.functions').smart_quit('buffer')<CR>", "Close" },
   h = { "<C-w>h", "Navigate left" },
   j = { "<C-w>j", "Navigate down" },
   k = { "<C-w>k", "Navigate up" },
