@@ -98,4 +98,5 @@ lvim.plugins = {
   --     "nvim-telescope/telescope.nvim"
   --   }
   -- }
+  { "ThePrimeagen/harpoon" }
 }

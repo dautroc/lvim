@@ -125,3 +125,34 @@ lvim.builtin.which_key.mappings["j"] = {
   l = { ":HopLine<cr>", "Jump line" },
   r = { ":Telescope jumplist<CR>","Jump list" },
 }
+
+local m_opts = {
+  mode = "n", -- NORMAL mode
+  prefix = "m",
+  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = true, -- use `silent` when creating keymaps
+  noremap = true, -- use `noremap` when creating keymaps
+  nowait = true, -- use `nowait` when creating keymaps
+}
+
+local status_ok, which_key = pcall(require, "which-key")
+if not status_ok then
+  return
+end
+
+local m_mappings = {
+  a = { "<cmd>silent BookmarkAnnotate<cr>", "Annotate" },
+  c = { "<cmd>silent BookmarkClear<cr>", "Clear" },
+  b = { "<cmd>silent BookmarkToggle<cr>", "Toggle" },
+  x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
+  j = { "<cmd>silent BookmarkNext<cr>", "Next" },
+  k = { "<cmd>silent BookmarkPrev<cr>", "Prev" },
+  S = { "<cmd>silent BookmarkShowAll<cr>", "Prev" },
+
+  -- Harpoon
+  m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
+  s = { "<cmd>Telescope harpoon marks<cr>", "Search Files" },
+  [";"] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
+}
+
+which_key.register(m_mappings, m_opts)
