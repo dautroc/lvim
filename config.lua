@@ -17,7 +17,6 @@ lvim.leader = "space"
 lvim.builtin.which_key.mappings["P"] = {}
 lvim.builtin.which_key.mappings["d"] = {} -- Turn off debug
 lvim.builtin.which_key.mappings["q"] = { '<cmd>lua require("user.functions").smart_quit()<CR>', "Quit" }
-lvim.builtin.which_key.mappings[";"] = { '<cmd>lua require("Comment.api").toggle.linewise.current()<CR>', "Comment" }
 lvim.builtin.which_key.mappings["p"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["<space>"] = { ":FzfLua files<CR>", "Find files" }
 lvim.builtin.which_key.mappings["/"] = { ":FzfLua grep_visual<CR>", "Find text in project" }
@@ -128,7 +127,8 @@ lvim.builtin.which_key.mappings["g"] = {
   g = { ":LazyGit<CR>", "Open LazyGit" },
   y = { "Copy code URL" },
   b = { ":Gitsigns blame_line<CR>", "Blame" },
-  f = { ":LazyGitFilterCurrentFile<CR>", "File History" },
+  f = { ":LazyGitFilterCurrentFile<CR>", "Current File History" },
+  h = { ":LazyGitFilter<CR>", "History" },
 }
 
 --- Test
@@ -262,7 +262,7 @@ lvim.plugins = {
   { "nvim-treesitter/nvim-treesitter-textobjects" },
   { "MattesGroeger/vim-bookmarks" },
   { "roobert/search-replace.nvim", config = function() require('search-replace').setup() end },
-  { "davidgranstrom/nvim-markdown-preview" }
+  { "davidgranstrom/nvim-markdown-preview" },
 }
 
 lvim.builtin.treesitter.on_config_done = function()
