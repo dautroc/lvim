@@ -4,9 +4,6 @@ lvim.plugins = {
     event = "BufRead",
     config = function()
       require("hop").setup()
-      vim.api.nvim_set_keymap("n", "<space>jj", ":HopChar2<cr>", { silent = true })
-      vim.api.nvim_set_keymap("n", "<space>jp", ":HopPattern<cr>", { silent = true })
-      vim.api.nvim_set_keymap("n", "<space>jl", ":HopLine<cr>", { silent = true })
     end,
   },
   { "tpope/vim-surround" },
@@ -91,4 +88,11 @@ lvim.plugins = {
   { "MattesGroeger/vim-bookmarks" },
   { "roobert/search-replace.nvim", config = function() require('search-replace').setup() end },
   { "davidgranstrom/nvim-markdown-preview" },
+  { "jackMort/ChatGPT.nvim",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  }
 }

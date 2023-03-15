@@ -120,8 +120,8 @@ lvim.builtin.which_key.mappings["m"] = {
 
 lvim.builtin.which_key.mappings["j"] = {
   name = "+Jump",
-  j = "Jump 2 Chars",
-  p = "Jump Pattern",
-  l = "Jump Line",
+  j = { ":HopChar2<cr>", "Jump 2 chars" },
+  p = { ":HopPattern<cr>", "Jump pattern" },
+  l = { ":HopLine<cr>", "Jump line" },
   r = { ":Telescope jumplist<CR>","Jump list" },
 }
