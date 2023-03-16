@@ -26,6 +26,12 @@ lvim.keys.normal_mode["tj"] = ":tabprev<CR>"
 lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
 lvim.keys.normal_mode["tl"] = "<cmd>lua require('telescope-tabs').list_tabs()<cr>"
 
+-- Move line
+lvim.keys.normal_mode["<C-j>"] = ":m .+1<CR>=="
+lvim.keys.normal_mode["<C-k>"] = ":m .-2<CR>=="
+lvim.keys.visual_mode["<C-j>"] = ":m '>+1<CR>gv=gv"
+lvim.keys.visual_mode["<C-k>"] = ":m '<-2<CR>gv=gv"
+
 lvim.keys.normal_mode["#"] = "*"
 
 lvim.builtin.which_key.mappings["q"] = {
