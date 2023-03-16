@@ -146,8 +146,8 @@ local m_mappings = {
   s = { "<cmd>silent BookmarkShowAll<cr>", "Show All" },
 
   -- Harpoon
-  m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon" },
-  f = { "<cmd>Telescope harpoon marks<cr>", "Search Files" },
+  m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon add file" },
+  f = { "<cmd>Telescope harpoon marks<cr>", "Harpoon search Files" },
   [";"] = { '<cmd>lua require("harpoon.ui").toggle_quick_menu()<cr>', "Harpoon UI" },
 }
 
