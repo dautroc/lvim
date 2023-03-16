@@ -60,7 +60,13 @@ lvim.builtin.which_key.mappings["f"] = {
   r = { "<cmd>Telescope oldfiles<cr>", "Recent files" },
   y = { ":let @+ = expand('%')<CR>", "Yank file path" },
   Y = { ":let @+ = join([expand('%'),  line('.')], ':')<CR>", "Yank file path with line number" },
-  t = { ":AV<CR>", "Open test file" },
+  t = { 
+    name = "Open test file",
+    a = { ":A<CR>", "Open" },
+    v = { ":AV<CR>", "Open vsplit" },
+    s = { ":AS<CR>", "Open vsplit" },
+    t = { ":AT<CR>", "Open in new tab" },
+  },
 }
 
 --- Buffer
