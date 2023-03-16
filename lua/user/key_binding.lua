@@ -2,7 +2,6 @@ lvim.builtin.which_key.mappings["P"] = {}
 lvim.builtin.which_key.mappings["d"] = {} -- Turn off debug
 lvim.builtin.which_key.mappings["p"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["<space>"] = { ":Telescope find_files<CR>", "Find files" }
-lvim.builtin.which_key.mappings["/"] = { ":Telescope grep_string<CR>", "Find string" }
 
 ---- Undo break points
 lvim.keys.insert_mode['_'] = '_<C-g>u'
@@ -55,6 +54,7 @@ lvim.builtin.which_key.mappings["w"] = {
 --- File
 lvim.builtin.which_key.mappings["f"] = {
   name = "+File",
+  d = { ":NvimTreeFindFile<CR>", "Find file in Explorer" },
   s = { ":w<CR>", "Save" },
   f = { "<cmd>Telescope find_files<cr>", "Find files" },
   r = { "<cmd>Telescope oldfiles<cr>", "Recent files" },
@@ -81,6 +81,7 @@ lvim.builtin.which_key.mappings["b"] = {
 --- Search
 lvim.builtin.which_key.mappings["s"] = {
   name = "+Search",
+  b = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Fuzzy find current buffer" },
   s = { "<cmd>Telescope grep_string<cr>", "Find String" },
   h = { "<cmd>Telescope help_tags<cr>", "Help" },
   t = { "<cmd>Telescope live_grep<cr>", "Find Text" },
