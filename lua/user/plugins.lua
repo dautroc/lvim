@@ -105,5 +105,20 @@ lvim.plugins = {
     config = function()
       require'telescope-tabs'.setup()
     end
+  },
+  {
+    "nvim-orgmode/orgmode", 
+    config = function()
+      require('orgmode').setup{}
+    end
+  },
+  {
+    "zbirenbaum/copilot.lua",
+    cmd = "Copilot",
+    event = "InsertEnter",
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    after = { "copilot.lua" },
   }
 }

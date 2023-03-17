@@ -54,7 +54,7 @@ lvim.builtin.which_key.mappings["w"] = {
 --- File
 lvim.builtin.which_key.mappings["f"] = {
   name = "+File",
-  d = { ":NvimTreeFindFile<CR>", "Find file in Explorer" },
+  e = { ":NvimTreeFindFile<CR>", "Find file in Explorer" },
   s = { ":w<CR>", "Save" },
   f = { "<cmd>Telescope find_files<cr>", "Find files" },
   r = { "<cmd>Telescope oldfiles<cr>", "Recent files" },
@@ -127,12 +127,26 @@ lvim.builtin.which_key.mappings["m"] = {
   d = { "<s-o>byebug<ESC>", "Add debug point" },
 }
 
+-- Jumping
 lvim.builtin.which_key.mappings["j"] = {
   name = "+Jump",
   j = { ":HopChar2<cr>", "Jump 2 chars" },
   p = { ":HopPattern<cr>", "Jump pattern" },
   l = { ":HopLine<cr>", "Jump line" },
   r = { ":Telescope jumplist<CR>","Jump list" },
+}
+
+-- Orgmode
+lvim.builtin.which_key.mappings["o"] = {
+  name = "+Orgmode",
+  a = { "Org agenda" },
+  c = { "Org capture" },
+}
+
+-- Copilot
+lvim.builtin.which_key.mappings["c"] = {
+  name = "+Copilot",
+  c = { "Copilot Panel" },
 }
 
 local m_opts = {
