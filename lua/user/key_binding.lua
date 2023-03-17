@@ -136,13 +136,6 @@ lvim.builtin.which_key.mappings["j"] = {
   r = { ":Telescope jumplist<CR>","Jump list" },
 }
 
--- Orgmode
--- lvim.builtin.which_key.mappings["o"] = {
---   name = "+Orgmode",
---   a = { "Org agenda" },
---   c = { "Org capture" },
--- }
-
 -- Copilot
 lvim.builtin.which_key.mappings["c"] = {
   name = "+Copilot",

@@ -1,5 +1,4 @@
 reload "user.config"
-reload "user.orgmode"
 reload "user.plugins"
 reload "user.copilot"
 reload "user.bookmark"
