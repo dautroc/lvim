@@ -146,7 +146,7 @@ lvim.builtin.which_key.mappings["o"] = {
 -- Copilot
 lvim.builtin.which_key.mappings["c"] = {
   name = "+Copilot",
-  c = { "Copilot Panel" },
+  c = { ":Copilot panel<CR>", "Open Panel" },
 }
 
 local m_opts = {
