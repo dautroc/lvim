@@ -117,8 +117,16 @@ lvim.plugins = {
   {
     "zbirenbaum/copilot-cmp",
     dependencies = { "copilot.lua" },
-    config = function ()
+    config = function()
       require("copilot_cmp").setup()
     end
-  }
+  },
+  {
+    "renerocksai/telekasten.nvim",
+    dependencies = {"nvim-telescope/telescope.nvim"},
+    config = function()
+      require('telekasten').setup({ home = vim.fn.expand("~/Dropbox/notes") })
+    end,
+  },
+  { "itchyny/calendar.vim" }
 }

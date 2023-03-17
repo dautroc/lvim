@@ -142,6 +142,18 @@ lvim.builtin.which_key.mappings["c"] = {
   c = { ":Copilot panel<CR>", "Open Panel" },
 }
 
+-- Notes
+lvim.builtin.which_key.mappings["n"] = {
+  name = "+Notes",
+  p = { ":Telekasten panel<CR>", "Open Panel" },
+  f = { ":Telekasten find_notes<CR>", "Find notes" },
+  s = { ":Telekasten search_notes<CR>", "Search notes" },
+  n = { ":Telekasten new_note<CR>", "New note" },
+  t = { ":Telekasten goto_today<CR>", "Today notes" },
+  w = { ":Telekasten goto_thisweek<CR>", "This Week notes" },
+  c = { ":lua require'telekasten'.show_calendar({cmd = 'Calendar -week'})<CR>", "Show calendar" },
+}
+
 local m_opts = {
   mode = "n", -- NORMAL mode
   prefix = "m",
