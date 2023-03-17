@@ -137,11 +137,11 @@ lvim.builtin.which_key.mappings["j"] = {
 }
 
 -- Orgmode
-lvim.builtin.which_key.mappings["o"] = {
-  name = "+Orgmode",
-  a = { "Org agenda" },
-  c = { "Org capture" },
-}
+-- lvim.builtin.which_key.mappings["o"] = {
+--   name = "+Orgmode",
+--   a = { "Org agenda" },
+--   c = { "Org capture" },
+-- }
 
 -- Copilot
 lvim.builtin.which_key.mappings["c"] = {
