@@ -15,8 +15,8 @@ require('copilot').setup({
     },
   },
   suggestion = {
-    enabled = false,
-    auto_trigger = false,
+    enabled = true,
+    auto_trigger = true,
     debounce = 75,
     keymap = {
       accept = "<M-l>",

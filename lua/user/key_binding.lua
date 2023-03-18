@@ -1,3 +1,9 @@
+-- Remove default key mapping
+lvim.keys.normal_mode["<C-h>"] = false
+lvim.keys.normal_mode["<C-j>"] = false
+lvim.keys.normal_mode["<C-k>"] = false
+lvim.keys.normal_mode["<C-l>"] = false
+
 lvim.builtin.which_key.mappings["P"] = {}
 lvim.builtin.which_key.mappings["d"] = {} -- Turn off debug
 lvim.builtin.which_key.mappings["p"] = { "<cmd>Telescope projects<CR>", "Projects" }
@@ -43,12 +49,12 @@ lvim.builtin.which_key.mappings["q"] = {
 lvim.builtin.which_key.mappings["w"] = {
   name = "+Window",
   d = { "<cmd>lua require('user.functions').smart_quit('buffer')<CR>", "Close" },
-  h = { "<C-w>h", "Navigate left" },
-  j = { "<C-w>j", "Navigate down" },
-  k = { "<C-w>k", "Navigate up" },
-  l = { "<C-w>l", "Navigate right" },
-  v = { "<C-w>v", "Vertical split" },
-  s = { "<C-w>s", "Horizontal split" },
+  h = { ":wincmd h<CR>", "Navigate left" },
+  j = { ":wincmd j<CR>", "Navigate down" },
+  k = { ":wincmd k<CR>", "Navigate up" },
+  l = { ":wincmd l<CR>", "Navigate right" },
+  v = { ":wincmd v<CR>", "Vertical split" },
+  s = { ":wincmd s<CR>", "Horizontal split" },
 }
 
 --- File
@@ -151,7 +157,7 @@ lvim.builtin.which_key.mappings["n"] = {
   n = { ":Telekasten new_note<CR>", "New note" },
   t = { ":Telekasten goto_today<CR>", "Today notes" },
   w = { ":Telekasten goto_thisweek<CR>", "This Week notes" },
-  c = { ":lua require'telekasten'.show_calendar({cmd = 'Calendar -week'})<CR>", "Show calendar" },
+  c = { ":lua require'telekasten'.show_calendar({cmd = 'Calendar -first_day=monday'})<CR>", "Show calendar" },
 }
 
 local m_opts = {
