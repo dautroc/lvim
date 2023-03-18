@@ -48,6 +48,7 @@ lvim.builtin.which_key.mappings["q"] = {
 -- Window
 lvim.builtin.which_key.mappings["w"] = {
   name = "+Window",
+  w = { "<cmd>lua require('nvim-window').pick()<CR>", "Pick window" },
   d = { "<cmd>lua require('user.functions').smart_quit('buffer')<CR>", "Close" },
   h = { ":wincmd h<CR>", "Navigate left" },
   j = { ":wincmd j<CR>", "Navigate down" },
