@@ -131,7 +131,7 @@ lvim.plugins = {
   { "itchyny/calendar.vim" },
   { 
     "yorickpeterse/nvim-window",
-    config =  function() 
+    config = function() 
       require('nvim-window').setup({
         -- The characters available for hinting windows.
         chars = {
@@ -151,5 +151,11 @@ lvim.plugins = {
       })
 
     end
+  },
+  { 
+    "beauwilliams/focus.nvim",
+    config = function() 
+      require("focus").setup() 
+    end 
   }
 }
