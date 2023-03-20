@@ -176,13 +176,13 @@ if not status_ok then
 end
 
 local m_mappings = {
-  a = { "<cmd>silent BookmarkAnnotate<cr>", "Annotate" },
-  c = { "<cmd>silent BookmarkClear<cr>", "Clear" },
-  t = { "<cmd>silent BookmarkToggle<cr>", "Toggle" },
-  x = { "<cmd>BookmarkClearAll<cr>", "Clear All" },
-  j = { "<cmd>silent BookmarkNext<cr>", "Next" },
-  k = { "<cmd>silent BookmarkPrev<cr>", "Prev" },
-  s = { "<cmd>silent BookmarkShowAll<cr>", "Show All" },
+  a = { "<cmd>:BookmarkAnnotate<cr>", "Annotate" },
+  c = { "<cmd>:BookmarkClear<cr>", "Clear" },
+  t = { "<cmd>:BookmarkToggle<cr>", "Toggle" },
+  x = { "<cmd>:BookmarkClearAll<cr>", "Clear All" },
+  j = { "<cmd>:BookmarkNext<cr>", "Next" },
+  k = { "<cmd>:BookmarkPrev<cr>", "Prev" },
+  s = { "<cmd>:BookmarkShowAll<cr>", "Show All" },
 
   -- Harpoon
   m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon add file" },
