@@ -24,6 +24,12 @@ lvim.keys.insert_mode[')'] = ')<C-g>u'
 lvim.keys.insert_mode[' '] = ' <C-g>u'
 lvim.keys.insert_mode["jj"] = "<esc>"
 
+---- Quick fix
+lvim.keys.normal_mode["ck"] = ":cprevious<CR>"
+lvim.keys.normal_mode["cj"] = ":cnext<CR>"
+lvim.keys.normal_mode["co"] = ":copen<CR>"
+lvim.keys.normal_mode["cc"] = ":cclose<CR>"
+
 ---- Tab navigator
 lvim.keys.normal_mode["tn"] = ":tabnew<CR>"
 lvim.keys.normal_mode["tk"] = ":tabnext<CR>"
