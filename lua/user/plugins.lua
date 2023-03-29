@@ -41,21 +41,24 @@ lvim.plugins = {
     config = function()
       require('neoscroll').setup({
         mappings = { '<C-u>', '<C-d>' },
-        hide_cursor = true, -- Hide cursor while scrolling
-        stop_eof = true, -- Stop at <EOF> when scrolling downwards
+        hide_cursor = true,          -- Hide cursor while scrolling
+        stop_eof = true,             -- Stop at <EOF> when scrolling downwards
         use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope
-        respect_scrolloff = false, -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+        respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
         cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
-        easing_function = nil, -- Default easing function
-        pre_hook = nil, -- Function to run before the scrolling animation starts
-        post_hook = nil, -- Function to run after the scrolling animation ends
+        easing_function = nil,       -- Default easing function
+        pre_hook = nil,              -- Function to run before the scrolling animation starts
+        post_hook = nil,             -- Function to run after the scrolling animation ends
       })
     end
   },
   { "tpope/vim-repeat" },
   { "wakatime/vim-wakatime" },
   { "tpope/vim-projectionist" },
-  { "vim-test/vim-test", dependencies = "preservim/vimux" },
+  {
+    "vim-test/vim-test",
+    dependencies = "preservim/vimux"
+  },
   { "tiagovla/scope.nvim" }, -- Using tab
   {
     "kevinhwang91/nvim-bqf",
@@ -86,7 +89,10 @@ lvim.plugins = {
   { "kdheepak/lazygit.nvim" },
   { "nvim-treesitter/nvim-treesitter-textobjects" },
   { "MattesGroeger/vim-bookmarks" },
-  { "roobert/search-replace.nvim", config = function() require('search-replace').setup() end },
+  {
+    "roobert/search-replace.nvim",
+    config = function() require('search-replace').setup() end
+  },
   { "davidgranstrom/nvim-markdown-preview" },
   -- { "jackMort/ChatGPT.nvim",
   --   config = function()
@@ -103,7 +109,7 @@ lvim.plugins = {
     'LukasPietzschmann/telescope-tabs',
     dependencies = { 'nvim-telescope/telescope.nvim' },
     config = function()
-      require'telescope-tabs'.setup()
+      require 'telescope-tabs'.setup()
     end
   },
   {
@@ -123,39 +129,35 @@ lvim.plugins = {
   },
   {
     "renerocksai/telekasten.nvim",
-    dependencies = {"nvim-telescope/telescope.nvim"},
+    dependencies = { "nvim-telescope/telescope.nvim" },
     config = function()
       require('telekasten').setup({ home = vim.fn.expand("~/Dropbox/notes") })
     end,
   },
   { "itchyny/calendar.vim" },
-  { 
+  {
     "yorickpeterse/nvim-window",
-    config = function() 
+    config = function()
       require('nvim-window').setup({
         -- The characters available for hinting windows.
         chars = {
-          'h', 'j', 'k', 'l', 'm', 'n'
+          'j', 'k', 'l', ';', 'n', 'm'
         },
-
         -- A group to use for overwriting the Normal highlight group in the floating
         -- window. This can be used to change the background color.
         normal_hl = 'Normal',
-
         -- The highlight group to apply to the line that contains the hint characters.
         -- This is used to make them stand out more.
         hint_hl = 'Bold',
-
         -- The border style to use for the floating window.
         border = 'single'
       })
-
     end
   },
-  -- { 
+  -- {
   --   "beauwilliams/focus.nvim",
-  --   config = function() 
-  --     require("focus").setup() 
-  --   end 
+  --   config = function()
+  --     require("focus").setup()
+  --   end
   -- }
 }
