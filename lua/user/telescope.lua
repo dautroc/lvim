@@ -57,25 +57,18 @@ lvim.builtin.telescope.defaults.mappings = {
   i = {
     ["<C-n>"] = actions.cycle_history_next,
     ["<C-p>"] = actions.cycle_history_prev,
-
     ["<C-j>"] = actions.move_selection_next,
     ["<C-k>"] = actions.move_selection_previous,
-
     ["<C-b>"] = actions.results_scrolling_up,
     ["<C-f>"] = actions.results_scrolling_down,
-
     ["<C-c>"] = actions.close,
-
     ["<Down>"] = actions.move_selection_next,
     ["<Up>"] = actions.move_selection_previous,
-
     ["<CR>"] = actions.select_default,
     ["<C-s>"] = actions.select_horizontal,
     ["<C-v>"] = actions.select_vertical,
     ["<C-t>"] = actions.select_tab,
-
     ["<c-d>"] = require("telescope.actions").delete_buffer,
-
     -- ["<C-u>"] = actions.preview_scrolling_up,
     -- ["<C-d>"] = actions.preview_scrolling_down,
 
@@ -98,14 +91,12 @@ lvim.builtin.telescope.defaults.mappings = {
     ["<C-t>"] = actions.select_tab,
     ["<C-b>"] = actions.results_scrolling_up,
     ["<C-f>"] = actions.results_scrolling_down,
-
     -- ["<Tab>"] = actions.close,
     -- ["<S-Tab>"] = actions.close,
     -- ["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
     -- ["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
     ["<C-q>"] = actions.send_to_qflist + actions.open_qflist,
     ["<M-q>"] = actions.send_selected_to_qflist + actions.open_qflist,
-
     ["j"] = actions.move_selection_next,
     ["k"] = actions.move_selection_previous,
     ["H"] = actions.move_to_top,
@@ -116,38 +107,33 @@ lvim.builtin.telescope.defaults.mappings = {
     ["s"] = actions.select_horizontal,
     ["v"] = actions.select_vertical,
     ["t"] = actions.select_tab,
-
     ["<Down>"] = actions.move_selection_next,
     ["<Up>"] = actions.move_selection_previous,
     ["gg"] = actions.move_to_top,
     ["G"] = actions.move_to_bottom,
-
     ["<C-u>"] = actions.preview_scrolling_up,
     ["<C-d>"] = actions.preview_scrolling_down,
-
     ["<PageUp>"] = actions.results_scrolling_up,
     ["<PageDown>"] = actions.results_scrolling_down,
-
     ["?"] = actions.which_key,
   },
 }
-
 lvim.builtin.telescope.pickers.live_grep = {
-  theme = "dropdown",
+  theme = "ivy",
 }
 
 lvim.builtin.telescope.pickers.grep_string = {
-  theme = "dropdown",
+  theme = "ivy",
 }
 
 lvim.builtin.telescope.pickers.find_files = {
-  theme = "dropdown",
-  previewer = false,
+  theme = "ivy",
+  previewer = true,
 }
 
 lvim.builtin.telescope.pickers.buffers = {
-  theme = "dropdown",
-  previewer = false,
+  theme = "ivy",
+  previewer = true,
   initial_mode = "normal",
 }
 
@@ -161,22 +147,22 @@ lvim.builtin.telescope.pickers.colorscheme = {
 }
 
 lvim.builtin.telescope.pickers.lsp_references = {
-  theme = "dropdown",
+  theme = "ivy",
   initial_mode = "normal",
 }
 
 lvim.builtin.telescope.pickers.lsp_definitions = {
-  theme = "dropdown",
+  theme = "ivy",
   initial_mode = "normal",
 }
 
 lvim.builtin.telescope.pickers.lsp_declarations = {
-  theme = "dropdown",
+  theme = "ivy",
   initial_mode = "normal",
 }
 
 lvim.builtin.telescope.pickers.lsp_implementations = {
-  theme = "dropdown",
+  theme = "ivy",
   initial_mode = "normal",
 }
 
@@ -184,6 +170,6 @@ require("telescope-tabs").setup {
   show_preview = false,
   close_tab_shortcut = "C-d",
   initial_mode = "normal",
-  theme = "dropdown",
+  theme = "ivy",
   -- Your custom config :^)
 }

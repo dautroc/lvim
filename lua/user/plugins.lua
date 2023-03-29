@@ -159,5 +159,13 @@ lvim.plugins = {
     config = function()
       require("focus").setup()
     end
-  }
+  },
+  {
+    'm-demare/hlargs.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('hlargs').setup()
+    end
+  },
+  { "desdic/agrolens.nvim" }
 }

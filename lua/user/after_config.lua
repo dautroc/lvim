@@ -12,7 +12,7 @@ lvim.builtin.treesitter.on_config_done = function()
         },
         selection_modes = {
           ['@parameter.outer'] = 'v', -- charwise
-          ['@function.outer'] = 'V', -- linewise
+          ['@function.outer'] = 'V',  -- linewise
           ['@class.outer'] = '<c-v>', -- blockwise
         },
         include_surrounding_whitespace = true,
@@ -21,6 +21,6 @@ lvim.builtin.treesitter.on_config_done = function()
   }
 end
 
--- lvim.builtin.telescope.on_config_done = function(telescope)
--- pcall(telescope.load_extension, "vim_bookmarks")
--- end
+lvim.builtin.telescope.on_config_done = function(telescope)
+  pcall(telescope.load_extension, "agrolens")
+end
