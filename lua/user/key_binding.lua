@@ -105,6 +105,8 @@ lvim.builtin.which_key.mappings["s"] = {
   H = { "<cmd>Telescope highlights<cr>", "Highlights" },
   l = { "<cmd>Telescope resume<cr>", "Last Search" },
   r = { "<cmd>Telescope registers<cr>", "Registers" },
+  f = { "<cmd>Telescope agrolens query=functions theme=ivy<cr>", "Functions" },
+  F = { "<cmd>Telescope agrolens query=callings theme=ivy<cr>", "Callings functions" },
 }
 
 --- Replace
