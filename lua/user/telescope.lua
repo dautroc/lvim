@@ -118,6 +118,7 @@ lvim.builtin.telescope.defaults.mappings = {
     ["?"] = actions.which_key,
   },
 }
+lvim.builtin.telescope.theme = "ivy"
 lvim.builtin.telescope.pickers.live_grep = {
   theme = "ivy",
 }
