@@ -62,6 +62,7 @@ lvim.builtin.which_key.mappings["w"] = {
   l = { ":wincmd l<CR>", "Navigate right" },
   v = { ":wincmd v<CR>", "Vertical split" },
   s = { ":wincmd s<CR>", "Horizontal split" },
+  f = { ":FocusMaxOrEqual<CR>", "Focus Max or Equal" },
 }
 
 --- File

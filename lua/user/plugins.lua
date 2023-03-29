@@ -141,11 +141,11 @@ lvim.plugins = {
       require('nvim-window').setup({
         -- The characters available for hinting windows.
         chars = {
-          'j', 'k', 'l', ';', 'n', 'm'
+          'h', 'j', 'k', 'l', ';', 'm', 'n'
         },
         -- A group to use for overwriting the Normal highlight group in the floating
         -- window. This can be used to change the background color.
-        normal_hl = 'Normal',
+        normal_hl = '@text.todo',
         -- The highlight group to apply to the line that contains the hint characters.
         -- This is used to make them stand out more.
         hint_hl = 'Bold',
@@ -154,10 +154,10 @@ lvim.plugins = {
       })
     end
   },
-  -- {
-  --   "beauwilliams/focus.nvim",
-  --   config = function()
-  --     require("focus").setup()
-  --   end
-  -- }
+  {
+    "beauwilliams/focus.nvim",
+    config = function()
+      require("focus").setup()
+    end
+  }
 }
