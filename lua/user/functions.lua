@@ -63,15 +63,15 @@ function M.smart_quit(option)
       prompt = "You have unsaved changes. Quit anyway? (y/n) ",
     }, function(input)
       if input == "y" then
-          if option == "all" then 
-            vim.cmd "qa!"
-          else
-            vim.cmd "q!"
-          end
+        if option == "all" then
+          vim.cmd "qa!"
+        else
+          vim.cmd "q!"
+        end
       end
     end)
   else
-    if option == "all" then 
+    if option == "all" then
       vim.cmd "qa!"
     else
       vim.cmd "q!"

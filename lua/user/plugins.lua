@@ -73,7 +73,7 @@ lvim.plugins = {
           border_chars = { "┃", "┃", "━", "━", "┏", "┓", "┗", "┛", "█" },
         },
         func_map = {
-          vsplit = "",
+          vsplit = "v",
           ptogglemode = "z,",
           stoggleup = "",
         },
@@ -157,7 +157,13 @@ lvim.plugins = {
   {
     "beauwilliams/focus.nvim",
     config = function()
-      require("focus").setup()
+      require("focus").setup({
+        excluded_buftypes = { "help", "nofile", "prompt", "quickfix", "terminal", "popup" },
+        autoresize = false,
+        enable = true,
+        signcolumn = false,
+        quickfixheight = 20
+      })
     end
   },
   {
