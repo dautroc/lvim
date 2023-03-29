@@ -23,6 +23,7 @@ lvim.keys.insert_mode['('] = '(<C-g>u'
 lvim.keys.insert_mode[')'] = ')<C-g>u'
 lvim.keys.insert_mode[' '] = ' <C-g>u'
 lvim.keys.insert_mode["jj"] = "<esc>"
+lvim.keys.insert_mode["jk"] = "<esc>"
 
 ---- Quick fix
 lvim.keys.normal_mode["zk"] = ":cprevious<CR>"
