@@ -73,7 +73,7 @@ lvim.builtin.which_key.mappings["f"] = {
   r = { "<cmd>Telescope oldfiles<cr>", "Recent files" },
   y = { ":let @+ = expand('%')<CR>", "Yank file path" },
   Y = { ":let @+ = join([expand('%'),  line('.')], ':')<CR>", "Yank file path with line number" },
-  t = { 
+  t = {
     name = "Open test file",
     a = { ":A<CR>", "Open" },
     v = { ":AV<CR>", "Open vsplit" },
@@ -146,7 +146,7 @@ lvim.builtin.which_key.mappings["j"] = {
   j = { ":HopChar2<cr>", "Jump 2 chars" },
   p = { ":HopPattern<cr>", "Jump pattern" },
   l = { ":HopLine<cr>", "Jump line" },
-  r = { ":Telescope jumplist<CR>","Jump list" },
+  r = { ":Telescope jumplist<CR>", "Jump list" },
 }
 
 -- Copilot
@@ -168,12 +168,12 @@ lvim.builtin.which_key.mappings["n"] = {
 }
 
 local m_opts = {
-  mode = "n", -- NORMAL mode
+  mode = "n",     -- NORMAL mode
   prefix = "m",
-  buffer = nil, -- Global mappings. Specify a buffer number for buffer local mappings
-  silent = true, -- use `silent` when creating keymaps
+  buffer = nil,   -- Global mappings. Specify a buffer number for buffer local mappings
+  silent = true,  -- use `silent` when creating keymaps
   noremap = true, -- use `noremap` when creating keymaps
-  nowait = true, -- use `nowait` when creating keymaps
+  nowait = true,  -- use `nowait` when creating keymaps
 }
 
 local status_ok, which_key = pcall(require, "which-key")
@@ -189,7 +189,6 @@ local m_mappings = {
   j = { "<cmd>:BookmarkNext<cr>", "Next" },
   k = { "<cmd>:BookmarkPrev<cr>", "Prev" },
   s = { "<cmd>:BookmarkShowAll<cr>", "Show All" },
-
   -- Harpoon
   m = { '<cmd>lua require("harpoon.mark").add_file()<cr>', "Harpoon add file" },
   f = { "<cmd>Telescope harpoon marks<cr>", "Harpoon search Files" },
