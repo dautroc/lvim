@@ -126,6 +126,10 @@ lvim.builtin.telescope.pickers.grep_string = {
   theme = "ivy",
 }
 
+lvim.builtin.telescope.pickers.current_buffer_fuzzy_find = {
+  theme = "ivy",
+}
+
 lvim.builtin.telescope.pickers.find_files = {
   theme = "ivy",
   previewer = true,
