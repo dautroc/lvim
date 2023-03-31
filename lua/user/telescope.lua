@@ -118,7 +118,36 @@ lvim.builtin.telescope.defaults.mappings = {
     ["?"] = actions.which_key,
   },
 }
+
+local lga_actions = require("telescope-live-grep-args.actions")
+lvim.builtin.telescope.extensions = {
+  fzf = {
+    fuzzy = true,                   -- false will only do exact matching
+    override_generic_sorter = true, -- override the generic sorter
+    override_file_sorter = true,    -- override the file sorter
+    case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
+  },
+  live_grep_args = {
+    auto_quoting = true, -- enable/disable auto-quoting
+    -- define mappings, e.g.
+    mappings = {
+      -- extend mappings
+      i = {
+        ["<C-o>"] = lga_actions.quote_prompt(),
+        ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
+        ["<C-y>"] = lga_actions.quote_prompt({ postfix = " -t " }),
+        ["<C-f>"] = lga_actions.quote_prompt({ postfix = " -g " }),
+      },
+    },
+    -- ... also accepts theme settings, for example:
+    -- theme = "dropdown", -- use dropdown theme
+    -- theme = { }, -- use own theme spec
+    -- layout_config = { mirror=true }, -- mirror preview pane
+  }
+}
+
 lvim.builtin.telescope.theme = "ivy"
+
 lvim.builtin.telescope.pickers.live_grep = {
   theme = "ivy",
 }
@@ -178,3 +207,9 @@ require("telescope-tabs").setup {
   theme = "ivy",
   -- Your custom config :^)
 }
+
+lvim.builtin.telescope.on_config_done = function(telescope)
+  pcall(telescope.load_extension, "agrolens")
+  pcall(telescope.load_extension, "fzf")
+  pcall(telescope.load_extension, "live_grep_args")
+end

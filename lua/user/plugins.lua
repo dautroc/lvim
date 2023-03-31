@@ -73,7 +73,7 @@ lvim.plugins = {
           border_chars = { "┃", "┃", "━", "━", "┏", "┓", "┗", "┛", "█" },
         },
         func_map = {
-          vsplit = "v",
+          vsplit = "<C-v>",
           ptogglemode = "z,",
           stoggleup = "",
         },
@@ -173,5 +173,12 @@ lvim.plugins = {
       require('hlargs').setup()
     end
   },
-  { "desdic/agrolens.nvim" }
+  { "desdic/agrolens.nvim" },
+  { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make' },
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      { "nvim-telescope/telescope-live-grep-args.nvim" },
+    },
+  }
 }

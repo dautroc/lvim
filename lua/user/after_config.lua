@@ -20,7 +20,3 @@ lvim.builtin.treesitter.on_config_done = function()
     },
   }
 end
-
-lvim.builtin.telescope.on_config_done = function(telescope)
-  pcall(telescope.load_extension, "agrolens")
-end

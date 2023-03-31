@@ -25,12 +25,6 @@ lvim.keys.insert_mode[' '] = ' <C-g>u'
 lvim.keys.insert_mode["jj"] = "<esc>"
 lvim.keys.insert_mode["jk"] = "<esc>"
 
----- Quick fix
-lvim.keys.normal_mode["zk"] = ":cprevious<CR>"
-lvim.keys.normal_mode["zj"] = ":cnext<CR>"
-lvim.keys.normal_mode["zo"] = ":copen<CR>"
-lvim.keys.normal_mode["zz"] = ":cclose<CR>"
-
 ---- Tab navigator
 lvim.keys.normal_mode["tn"] = ":tabnew<CR>"
 lvim.keys.normal_mode["tk"] = ":tabnext<CR>"
@@ -108,6 +102,7 @@ lvim.builtin.which_key.mappings["s"] = {
   r = { "<cmd>Telescope registers<cr>", "Registers" },
   f = { "<cmd>Telescope agrolens query=functions theme=ivy<cr>", "Functions" },
   F = { "<cmd>Telescope agrolens query=callings theme=ivy<cr>", "Callings functions" },
+  g = { ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "Grep" },
 }
 
 --- Replace
@@ -142,6 +137,15 @@ lvim.builtin.which_key.mappings["m"] = {
   s = { ":Telescope spell_suggest<CR>", "Spell suggest" },
   m = { ":MarkdownPreview solarized-light<CR>", "Markdown Preview" },
   d = { "<s-o>byebug<ESC>", "Add debug point" },
+  r = {
+    namne = "+Rails",
+    m = { ":Telescope find_files cwd=app/models<CR>", "Find models" },
+    s = { ":Telescope find_files cwd=app/services<CR>", "Find services" },
+    c = { ":Telescope find_files cwd=app/controllers<CR>", "Find controllers" },
+    a = { ":Telescope find_files cwd=app/api<CR>", "Find api" },
+    p = { ":Telescope find_files cwd=app/policies<CR>", "Find policies" },
+    i = { ":Telescope find_files cwd=app/mailers<CR>", "Find mailers" },
+  },
 }
 
 -- Jumping
@@ -170,6 +174,8 @@ lvim.builtin.which_key.mappings["n"] = {
   w = { ":Telekasten goto_thisweek<CR>", "This Week notes" },
   c = { ":lua require'telekasten'.show_calendar({cmd = 'Calendar -first_day=monday'})<CR>", "Show calendar" },
 }
+
+lvim.builtin.which_key.mappings["lE"] = { ":Telescope quickfixhistory<CR>", "Telescope quickfix history" }
 
 local m_opts = {
   mode = "n",     -- NORMAL mode
