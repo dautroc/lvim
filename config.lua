@@ -1,4 +1,4 @@
-reload "user.config"
+reload "user.setting"
 reload "user.plugins"
 reload "user.copilot"
 reload "user.bookmark"
