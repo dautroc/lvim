@@ -180,5 +180,6 @@ lvim.plugins = {
     dependencies = {
       { "nvim-telescope/telescope-live-grep-args.nvim" },
     },
-  }
+  },
+  { 'kevinhwang91/nvim-ufo', dependencies = 'kevinhwang91/promise-async' }
 }
