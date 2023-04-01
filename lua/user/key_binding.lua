@@ -40,6 +40,11 @@ lvim.keys.visual_mode["<C-k>"] = ":m '<-2<CR>gv=gv"
 
 lvim.keys.normal_mode["#"] = "*"
 lvim.keys.normal_mode["U"] = ":UndotreeToggle<CR>"
+-- lvim.keys.normal_mode["<C-p>"] = "\"_dP"
+
+-- Keep cursor in the middle of the screen
+lvim.keys.normal_mode["n"] = "nzzzv"
+lvim.keys.normal_mode["N"] = "Nzzzv"
 
 lvim.builtin.which_key.mappings["q"] = {
   name = "+Quit/Session",
