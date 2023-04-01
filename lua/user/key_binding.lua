@@ -1,6 +1,3 @@
--- Greatest keymap ever
-vim.keymap.set("x", "P", "\"_dP")
-
 -- Remove default key mapping
 lvim.keys.normal_mode["<C-h>"] = false
 lvim.keys.normal_mode["<C-j>"] = false
