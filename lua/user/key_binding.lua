@@ -41,6 +41,7 @@ lvim.keys.visual_mode["<C-k>"] = ":m '<-2<CR>gv=gv"
 
 lvim.keys.normal_mode["#"] = "*"
 lvim.keys.normal_mode["U"] = ":UndotreeToggle<CR>"
+lvim.keys.normal_mode["gR"] = ":TroubleRefresh<CR>"
 lvim.keys.normal_mode["<C-p>"] = ":lua require'lir.float'.toggle()<CR>"
 -- lvim.keys.normal_mode["<C-p>"] = "\"_dP"
 
@@ -176,7 +177,9 @@ lvim.builtin.which_key.mappings["n"] = {
   w = { ":Telekasten goto_thisweek<CR>", "This Week notes" },
 }
 
+-- LSP
 lvim.builtin.which_key.mappings["lE"] = { ":Telescope quickfixhistory<CR>", "Telescope quickfix history" }
+lvim.builtin.which_key.mappings["lt"] = { ":Trouble<CR>", "Trouble" }
 
 local m_opts = {
   mode = "n",     -- NORMAL mode

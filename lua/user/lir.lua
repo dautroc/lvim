@@ -1,12 +1,12 @@
-local actions = require 'lir.actions'
-local mark_actions = require 'lir.mark.actions'
-local clipboard_actions = require 'lir.clipboard.actions'
+local actions = lvim.builtin.lir.actions
+local mark_actions = lvim.builtin.lir.mark.actions
+local clipboard_actions = lvim.builtin.lir.clipboard.actions
 
-require 'lir'.setup {
+lvim.builtin.lir.setup {
   show_hidden_files = false,
   ignore = {}, -- { ".DS_Store", "node_modules" } etc.
   devicons = {
-    enable = true,
+    enable = false,
     highlight_dirname = false
   },
   mappings = {

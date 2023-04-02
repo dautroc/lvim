@@ -188,6 +188,17 @@ lvim.plugins = {
     dependencies = 'kkharji/sqlite.lua'
   },
   { 'stevearc/dressing.nvim' },
-  { 'echasnovski/mini.nvim', version = false }
+  { 'echasnovski/mini.nvim', version = false },
+  {
+    "folke/trouble.nvim",
+    dependencies = "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("trouble").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  }
 
 }
