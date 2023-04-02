@@ -165,12 +165,6 @@ lvim.builtin.which_key.mappings["j"] = {
   r = { ":Telescope jumplist<CR>", "Jump list" },
 }
 
--- Copilot
-lvim.builtin.which_key.mappings["c"] = {
-  name = "+Copilot",
-  c = { ":Copilot panel<CR>", "Open Panel" },
-}
-
 -- Notes
 lvim.builtin.which_key.mappings["n"] = {
   name = "+Notes",
