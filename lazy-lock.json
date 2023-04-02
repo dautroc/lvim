@@ -12,7 +12,6 @@
   "copilot-cmp": { "branch": "master", "commit": "92535dfd9c430b49ca7d9a7da336c5db65826b65" },
   "copilot.lua": { "branch": "master", "commit": "f0b41fb89ef2ed7ab4e8cd5208a30755aa638fc4" },
   "dressing.nvim": { "branch": "master", "commit": "5f44f829481640be0f96759c965ae22a3bcaf7ce" },
-  "focus.nvim": { "branch": "master", "commit": "3d9df42aa4f9b572348418207b752f81adea09a5" },
   "friendly-snippets": { "branch": "main", "commit": "8d91ba2dc2421a54981115f61b914974f938fa77" },
   "gitlinker.nvim": { "branch": "master", "commit": "cc59f732f3d043b626c8702cb725c82e54d35c25" },
   "gitsigns.nvim": { "branch": "main", "commit": "ca473e28382f1524aa3d2b6f04bcf54f2e6a64cb" },
@@ -78,5 +77,6 @@
   "vim-test": { "branch": "master", "commit": "739024ba3264cf153d54ab8da5cdaaa978f7628c" },
   "vim-wakatime": { "branch": "master", "commit": "3b3d7f3d0fb4a476a7d1ef4d6f41e31050bdf52a" },
   "vimux": { "branch": "master", "commit": "616fcb4799674a7a809b14ca2dc155bb6ba25788" },
-  "which-key.nvim": { "branch": "main", "commit": "87b1459b3e0be0340da2183fc4ec8a00b2960678" }
+  "which-key.nvim": { "branch": "main", "commit": "87b1459b3e0be0340da2183fc4ec8a00b2960678" },
+  "zen-mode.nvim": { "branch": "main", "commit": "d907e638c879642d226d27469b53db6925f69d4c" }
 }

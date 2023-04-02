@@ -154,18 +154,6 @@ lvim.plugins = {
     end
   },
   {
-    "beauwilliams/focus.nvim",
-    config = function()
-      require("focus").setup({
-        excluded_buftypes = { "help", "nofile", "prompt", "quickfix", "terminal", "popup" },
-        autoresize = false,
-        enable = true,
-        signcolumn = false,
-        quickfixheight = 20
-      })
-    end
-  },
-  {
     'm-demare/hlargs.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter' },
     config = function()
@@ -194,6 +182,16 @@ lvim.plugins = {
     dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
       require("trouble").setup {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+      }
+    end
+  },
+  {
+    "folke/zen-mode.nvim",
+    config = function()
+      require("zen-mode").setup {
         -- your configuration comes here
         -- or leave it empty to use the default settings
         -- refer to the configuration section below
