@@ -6,6 +6,7 @@ lvim.keys.normal_mode["<C-l>"] = false
 
 lvim.builtin.which_key.mappings["P"] = {}
 lvim.builtin.which_key.mappings["d"] = {} -- Turn off debug
+lvim.builtin.which_key.mappings["x"] = { ":Legendary<CR>", "M-x fuzzy" }
 lvim.builtin.which_key.mappings["p"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["<space>"] = { ":Telescope find_files<CR>", "Find files" }
 
