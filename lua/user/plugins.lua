@@ -186,8 +186,9 @@ lvim.plugins = {
   {
     'mrjones2014/legendary.nvim',
     -- sqlite is only needed if you want to use frecency sorting
-    -- requires = 'kkharji/sqlite.lua'
+    dependencies = 'kkharji/sqlite.lua'
   },
-  { 'stevearc/dressing.nvim' }
+  { 'stevearc/dressing.nvim' },
+  { 'echasnovski/mini.nvim', version = false }
 
 }
