@@ -20,3 +20,7 @@ lvim.builtin.treesitter.on_config_done = function()
     },
   }
 end
+
+lvim.builtin.lir.on_config_done = function()
+  reload "user.lir"
+end
