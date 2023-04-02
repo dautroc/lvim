@@ -42,7 +42,6 @@ lvim.keys.normal_mode["tl"] = "<cmd>lua require('telescope-tabs').list_tabs()<cr
 lvim.keys.normal_mode["#"] = "*"
 lvim.keys.normal_mode["U"] = ":UndotreeToggle<CR>"
 lvim.keys.normal_mode["gR"] = ":TroubleRefresh<CR>"
-lvim.keys.normal_mode["<C-p>"] = ":lua require'lir.float'.toggle()<CR>"
 -- lvim.keys.normal_mode["<C-p>"] = "\"_dP"
 
 -- Keep cursor in the middle of the screen
