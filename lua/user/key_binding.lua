@@ -174,7 +174,6 @@ lvim.builtin.which_key.mappings["n"] = {
   n = { ":Telekasten new_note<CR>", "New note" },
   t = { ":Telekasten goto_today<CR>", "Today notes" },
   w = { ":Telekasten goto_thisweek<CR>", "This Week notes" },
-  c = { ":lua require'telekasten'.show_calendar({cmd = 'Calendar -first_day=monday'})<CR>", "Show calendar" },
 }
 
 lvim.builtin.which_key.mappings["lE"] = { ":Telescope quickfixhistory<CR>", "Telescope quickfix history" }

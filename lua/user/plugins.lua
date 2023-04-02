@@ -134,7 +134,6 @@ lvim.plugins = {
       require('telekasten').setup({ home = vim.fn.expand("~/Dropbox/notes") })
     end,
   },
-  { "itchyny/calendar.vim" },
   {
     "yorickpeterse/nvim-window",
     config = function()
