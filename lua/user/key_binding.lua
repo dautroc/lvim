@@ -163,6 +163,7 @@ lvim.builtin.which_key.mappings["j"] = {
   p = { ":HopPattern<cr>", "Jump pattern" },
   l = { ":HopLine<cr>", "Jump line" },
   r = { ":Telescope jumplist<CR>", "Jump list" },
+  w = { "<cmd>lua require('nvim-window').pick()<CR>", "Jump window" },
 }
 
 -- Notes
