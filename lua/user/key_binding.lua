@@ -5,6 +5,7 @@ lvim.keys.normal_mode["<C-k>"] = false
 lvim.keys.normal_mode["<C-l>"] = false
 
 lvim.builtin.which_key.mappings["P"] = {}
+lvim.builtin.which_key.mappings["c"] = {}
 lvim.builtin.which_key.mappings["d"] = {} -- Turn off debug
 lvim.builtin.which_key.mappings["x"] = { ":Legendary<CR>", "M-x fuzzy" }
 lvim.builtin.which_key.mappings["p"] = { "<cmd>Telescope projects<CR>", "Projects" }
@@ -26,6 +27,11 @@ lvim.keys.insert_mode[')'] = ')<C-g>u'
 lvim.keys.insert_mode[' '] = ' <C-g>u'
 lvim.keys.insert_mode["jj"] = "<esc>"
 lvim.keys.insert_mode["jk"] = "<esc>"
+
+-- Quickfix
+lvim.keys.normal_mode["cj"] = ":cnext<CR>"
+lvim.keys.normal_mode["ck"] = ":cprev<CR>"
+lvim.keys.normal_mode["co"] = ":copen<CR>"
 
 ---- Tab navigator
 lvim.keys.normal_mode["tn"] = ":tabnew<CR>"
@@ -175,6 +181,15 @@ lvim.builtin.which_key.mappings["n"] = {
   n = { ":Telekasten new_note<CR>", "New note" },
   t = { ":Telekasten goto_today<CR>", "Today notes" },
   w = { ":Telekasten goto_thisweek<CR>", "This Week notes" },
+}
+
+-- Toggle Term
+lvim.builtin.which_key.mappings["c"] = {
+  name = "+CMD",
+  h = { ":ToggleTerm h<CR>", "Open first term" },
+  j = { ":ToggleTerm j<CR>", "Open second term" },
+  k = { ":ToggleTerm k<CR>", "Open third term" },
+  l = { ":ToggleTerm l<CR>", "Open fourth term" },
 }
 
 -- LSP
