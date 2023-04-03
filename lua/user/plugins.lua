@@ -183,5 +183,6 @@ lvim.plugins = {
       require("zen-mode").setup {}
     end
   },
+  { 'kevinhwang91/rnvimr' }
 
 }

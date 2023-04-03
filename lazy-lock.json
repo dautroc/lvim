@@ -54,6 +54,7 @@
   "popup.nvim": { "branch": "master", "commit": "b7404d35d5d3548a82149238289fa71f7f6de4ac" },
   "project.nvim": { "branch": "main", "commit": "1c2e9c93c7c85126c2197f5e770054f53b1926fb" },
   "promise-async": { "branch": "main", "commit": "7fa127fa80e7d4d447e0e2c78e99af4355f4247b" },
+  "rnvimr": { "branch": "main", "commit": "5edff6189cb0f4fae77ee751de5109a8f87cb9c7" },
   "schemastore.nvim": { "branch": "main", "commit": "ae41a33c0a30162d938619b055315efc0b459c18" },
   "scope.nvim": { "branch": "main", "commit": "2db6d31de8e3a98d2b41c0f0d1f5dc299ee76875" },
   "search-replace.nvim": { "branch": "main", "commit": "b3485c9cd14319c5320bbdd74af0b3c67733490d" },
