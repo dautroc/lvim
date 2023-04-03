@@ -72,3 +72,5 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     underline = false
   }
 )
+
+vim.diagnostic.disable()
