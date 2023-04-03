@@ -178,13 +178,6 @@ lvim.plugins = {
   { 'stevearc/dressing.nvim' },
   { 'echasnovski/mini.nvim', version = false },
   {
-    "folke/trouble.nvim",
-    dependencies = "nvim-tree/nvim-web-devicons",
-    config = function()
-      require("trouble").setup {}
-    end
-  },
-  {
     "folke/zen-mode.nvim",
     config = function()
       require("zen-mode").setup {}

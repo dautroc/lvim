@@ -42,7 +42,6 @@ lvim.keys.normal_mode["tl"] = "<cmd>lua require('telescope-tabs').list_tabs()<cr
 
 lvim.keys.normal_mode["#"] = "*"
 lvim.keys.normal_mode["U"] = ":UndotreeToggle<CR>"
-lvim.keys.normal_mode["gR"] = ":TroubleRefresh<CR>"
 -- lvim.keys.normal_mode["<C-p>"] = "\"_dP"
 
 -- Keep cursor in the middle of the screen
@@ -179,7 +178,6 @@ lvim.builtin.which_key.mappings["n"] = {
 
 -- LSP
 lvim.builtin.which_key.mappings["lE"] = { ":Telescope quickfixhistory<CR>", "Telescope quickfix history" }
-lvim.builtin.which_key.mappings["lt"] = { ":Trouble<CR>", "Trouble" }
 
 local m_opts = {
   mode = "n",     -- NORMAL mode
