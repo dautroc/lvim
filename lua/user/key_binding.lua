@@ -183,13 +183,13 @@ lvim.builtin.which_key.mappings["n"] = {
   w = { ":Telekasten goto_thisweek<CR>", "This Week notes" },
 }
 
--- Toggle Term
+-- ToggleTerm
 lvim.builtin.which_key.mappings["c"] = {
   name = "+CMD",
-  h = { ":ToggleTerm h<CR>", "Open first term" },
-  j = { ":ToggleTerm j<CR>", "Open second term" },
-  k = { ":ToggleTerm k<CR>", "Open third term" },
-  l = { ":ToggleTerm l<CR>", "Open fourth term" },
+  h = { "1:ToggleTerm<CR>", "Open first term" },
+  j = { "2:ToggleTerm<CR>", "Open second term" },
+  k = { "3:ToggleTerm<CR>", "Open third term" },
+  l = { "4:ToggleTerm<CR>", "Open fourth term" },
 }
 
 -- LSP
