@@ -95,6 +95,7 @@ end
 -- global handler
 -- `handler` is the 2nd parameter of `setFoldVirtTextHandler`,
 -- check out `./lua/ufo.lua` and search `setFoldVirtTextHandler` for detail.
+require('ufo').setup()
 require('ufo').setup({
   fold_virt_text_handler = handler
 })
