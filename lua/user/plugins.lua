@@ -183,6 +183,7 @@ lvim.plugins = {
       require("zen-mode").setup {}
     end
   },
-  { 'kevinhwang91/rnvimr' }
-
+  { 'kevinhwang91/rnvimr' },
+  { 'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim' },
+  { 'tpope/vim-fugitive' },
 }

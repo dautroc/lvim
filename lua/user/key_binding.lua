@@ -135,7 +135,7 @@ lvim.builtin.which_key.mappings["g"] = {
   name = "+Git",
   g = { ":LazyGit<CR>", "Open LazyGit" },
   y = { "Copy code URL" },
-  b = { ":Gitsigns blame_line<CR>", "Blame" },
+  b = { ":Git blame<CR>", "Blame" },
   f = { ":LazyGitFilterCurrentFile<CR>", "Current File History" },
   h = { ":LazyGitFilter<CR>", "History" },
 }
