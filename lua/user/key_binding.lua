@@ -75,7 +75,7 @@ lvim.builtin.which_key.mappings["w"] = {
   l = { ":wincmd l<CR>", "Navigate right" },
   v = { ":wincmd v<CR>", "Vertical split" },
   s = { ":wincmd s<CR>", "Horizontal split" },
-  f = { ":ZenMode<CR>", "Focus Toggle" },
+  f = { ":lua require('zen-mode').toggle({ window = { width = .5 }})<CR>", "Focus Toggle" },
 }
 
 --- File
