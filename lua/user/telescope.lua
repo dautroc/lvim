@@ -212,4 +212,5 @@ lvim.builtin.telescope.on_config_done = function(telescope)
   pcall(telescope.load_extension, "agrolens")
   pcall(telescope.load_extension, "fzf")
   pcall(telescope.load_extension, "live_grep_args")
+  pcall(telescope.load_extension, "neoclip")
 end

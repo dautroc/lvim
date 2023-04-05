@@ -117,7 +117,7 @@ lvim.builtin.which_key.mappings["s"] = {
   C = { "<cmd>Telescope commands<cr>", "Commands" },
   H = { "<cmd>Telescope highlights<cr>", "Highlights" },
   l = { "<cmd>Telescope resume<cr>", "Last Search" },
-  r = { "<cmd>Telescope registers<cr>", "Registers" },
+  r = { "<cmd>Telescope neoclip<cr>", "Registers" },
   f = { "<cmd>Telescope agrolens query=functions theme=ivy<cr>", "Functions" },
   F = { "<cmd>Telescope agrolens query=callings theme=ivy<cr>", "Callings functions" },
   g = { ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", "Grep" },
