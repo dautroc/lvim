@@ -146,8 +146,15 @@ lvim.builtin.which_key.mappings["g"] = {
 --- Test
 lvim.builtin.which_key.mappings["t"] = {
   name = "+Test",
-  n = { "<cmd>TestNearest<CR>", "Test Nearest" },
-  f = { "<cmd>TestFile<CR>", "Test File" },
+  n = { "<cmd>lua require('neotest').run.run()<CR>", "Test Nearest" },
+  f = { "<cmd>lua require('neotest').run.run(vim.fn.expand('%'))<CR>", "Test File" },
+  l = { "<cmd>lua require('neotest').run.run_last()<CR>", "Run last test" },
+  a = { "<cmd>lua require('neotest').run.attach()<CR>", "Atttach running test" },
+  s = { "<cmd>lua require('neotest').run.stop()<CR>", "Stop running test" },
+  o = { "<cmd>lua require('neotest').output.open()<CR>", "Open test output" },
+  p = { "<cmd>lua require('neotest').output_panel.toggle()<CR>", "Panel toggle" },
+  k = { "<cmd>lua require('neotest').jump.prev({ status = 'falied' })<CR>", "Jump prev failed" },
+  j = { "<cmd>lua require('neotest').jump.next({ status = 'falied' })<CR>", "Jump next failed" },
 }
 --- Misc
 lvim.builtin.which_key.mappings["m"] = {
