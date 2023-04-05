@@ -46,6 +46,9 @@ lvim.keys.normal_mode["tl"] = "<cmd>lua require('telescope-tabs').list_tabs()<cr
 -- lvim.keys.visual_mode["<C-j>"] = ":m '>+1<CR>gv=gv"
 -- lvim.keys.visual_mode["<C-k>"] = ":m '<-2<CR>gv=gv"
 
+-- lvim.lsp.buffer_mappings.normal_mode["gl"] = {}
+-- lvim.keys.normal_mode["gl"] = "$"
+-- lvim.keys.normal_mode["gh"] = "^"
 lvim.keys.normal_mode["#"] = "*"
 lvim.keys.normal_mode["U"] = ":UndotreeToggle<CR>"
 
@@ -160,6 +163,7 @@ lvim.builtin.which_key.mappings["m"] = {
     a = { ":Telescope find_files cwd=app/api<CR>", "Find api" },
     p = { ":Telescope find_files cwd=app/policies<CR>", "Find policies" },
     i = { ":Telescope find_files cwd=app/mailers<CR>", "Find mailers" },
+    l = { ":Telescope find_files cwd=config/locales<CR>", "Find locales" },
   },
 }
 
@@ -185,13 +189,13 @@ lvim.builtin.which_key.mappings["n"] = {
 }
 
 -- ToggleTerm
-lvim.builtin.which_key.mappings["c"] = {
-  name = "+CMD",
-  h = { "1:ToggleTerm<CR>", "Open first term" },
-  j = { "2:ToggleTerm<CR>", "Open second term" },
-  k = { "3:ToggleTerm<CR>", "Open third term" },
-  l = { "4:ToggleTerm<CR>", "Open fourth term" },
-}
+-- lvim.builtin.which_key.mappings["c"] = {
+--   name = "+CMD",
+--   h = { "1:ToggleTerm<CR>", "Open first term" },
+--   j = { "2:ToggleTerm<CR>", "Open second term" },
+--   k = { "3:ToggleTerm<CR>", "Open third term" },
+--   l = { "4:ToggleTerm<CR>", "Open fourth term" },
+-- }
 
 -- LSP
 lvim.builtin.which_key.mappings["lE"] = { ":Telescope quickfixhistory<CR>", "Telescope quickfix history" }
