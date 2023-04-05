@@ -55,10 +55,6 @@ lvim.plugins = {
   { "tpope/vim-repeat" },
   { "wakatime/vim-wakatime" },
   { "tpope/vim-projectionist" },
-  {
-    "vim-test/vim-test",
-    dependencies = "preservim/vimux"
-  },
   { "tiagovla/scope.nvim" }, -- Using tab
   {
     "kevinhwang91/nvim-bqf",
@@ -185,5 +181,5 @@ lvim.plugins = {
   },
   { 'kevinhwang91/rnvimr' },
   { 'sindrets/diffview.nvim', dependencies = 'nvim-lua/plenary.nvim' },
-  { 'tpope/vim-fugitive' },
+  { 'tpope/vim-fugitive' }
 }
