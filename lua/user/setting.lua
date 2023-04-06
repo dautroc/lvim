@@ -52,7 +52,7 @@ lvim.format_on_save = {
   timeout = 1000,
 }
 
-lvim.colorscheme = "tokyonight"
+lvim.colorscheme = "material"
 lvim.leader = "space"
 lvim.builtin.alpha.active = true
 lvim.builtin.terminal.active = true

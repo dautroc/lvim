@@ -218,5 +218,6 @@ lvim.plugins = {
     config = function()
       require('neoclip').setup()
     end,
-  }
+  },
+  { 'marko-cerovac/material.nvim' }
 }

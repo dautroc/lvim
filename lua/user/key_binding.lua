@@ -5,6 +5,7 @@ lvim.keys.normal_mode["<C-k>"] = false
 lvim.keys.normal_mode["<C-l>"] = false
 
 lvim.builtin.which_key.mappings["P"] = {}
+lvim.builtin.which_key.mappings["<tab>"] = { ":b#<CR>", "Last opened buffer" }
 lvim.builtin.which_key.mappings["c"] = {}
 lvim.builtin.which_key.mappings["d"] = {} -- Turn off debug
 lvim.builtin.which_key.mappings["x"] = { ":Legendary<CR>", "M-x fuzzy" }
@@ -58,6 +59,8 @@ lvim.keys.normal_mode["tgl"] = ":BufferLineGoToBuffer 4<CR>"
 -- lvim.keys.normal_mode["gl"] = "$"
 -- lvim.keys.normal_mode["gh"] = "^"
 lvim.keys.normal_mode["#"] = "*"
+lvim.keys.normal_mode["H"] = "^"
+lvim.keys.normal_mode["L"] = "$"
 lvim.keys.normal_mode["U"] = ":UndotreeToggle<CR>"
 
 -- Keep cursor in the middle of the screen
@@ -170,6 +173,7 @@ lvim.builtin.which_key.mappings["m"] = {
   s = { ":Telescope spell_suggest<CR>", "Spell suggest" },
   m = { ":MarkdownPreview solarized-light<CR>", "Markdown Preview" },
   d = { "<s-o>byebug<ESC>", "Add debug point" },
+  t = { ":lua require('material.functions').toggle_style()<ESC>", "Toggle theme" },
   r = {
     namne = "+Rails",
     m = { ":Telescope find_files cwd=app/models<CR>", "Find models" },
