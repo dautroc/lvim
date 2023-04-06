@@ -204,13 +204,13 @@ lvim.builtin.which_key.mappings["n"] = {
 }
 
 -- ToggleTerm
--- lvim.builtin.which_key.mappings["c"] = {
---   name = "+CMD",
---   h = { "1:ToggleTerm<CR>", "Open first term" },
---   j = { "2:ToggleTerm<CR>", "Open second term" },
---   k = { "3:ToggleTerm<CR>", "Open third term" },
---   l = { "4:ToggleTerm<CR>", "Open fourth term" },
--- }
+lvim.builtin.which_key.mappings["i"] = {
+  name = "+CMD",
+  h = { ":1ToggleTerm<CR>", "Open first term" },
+  j = { ":2ToggleTerm<CR>", "Open second term" },
+  k = { ":3ToggleTerm<CR>", "Open third term" },
+  l = { ":4ToggleTerm<CR>", "Open fourth term" },
+}
 
 -- LSP
 lvim.builtin.which_key.mappings["lE"] = { ":Telescope quickfixhistory<CR>", "Telescope quickfix history" }
