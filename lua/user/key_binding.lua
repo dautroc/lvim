@@ -10,7 +10,7 @@ lvim.builtin.which_key.mappings["d"] = {} -- Turn off debug
 lvim.builtin.which_key.mappings["x"] = { ":Legendary<CR>", "M-x fuzzy" }
 lvim.builtin.which_key.mappings["p"] = { "<cmd>Telescope projects<CR>", "Projects" }
 lvim.builtin.which_key.mappings["<space>"] = { ":Telescope find_files<CR>", "Find files" }
-lvim.builtin.which_key.mappings["e"] = { ":RnvimrToggle<CR>", "Explorer" }
+lvim.builtin.which_key.mappings["e"] = { ":Explore<CR>", "Explorer" }
 
 ---- Undo break points
 lvim.keys.insert_mode['_'] = '_<C-g>u'
