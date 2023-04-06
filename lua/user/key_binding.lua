@@ -35,10 +35,18 @@ lvim.keys.normal_mode["co"] = ":copen<CR>"
 
 ---- Tab navigator
 lvim.keys.normal_mode["tn"] = ":tabnew<CR>"
-lvim.keys.normal_mode["tk"] = ":tabnext<CR>"
-lvim.keys.normal_mode["tj"] = ":tabprev<CR>"
 lvim.keys.normal_mode["tt"] = ":tabclose<CR>"
 lvim.keys.normal_mode["tl"] = "<cmd>lua require('telescope-tabs').list_tabs()<cr>"
+
+lvim.keys.normal_mode["tk"] = ":BufferLineCycleNext<CR>"
+lvim.keys.normal_mode["tj"] = ":BufferLineCyclePrev<CR>"
+
+lvim.keys.normal_mode["tK"] = ":BufferLineMoveNext<CR>"
+lvim.keys.normal_mode["tJ"] = ":BufferLineMovePrev<CR>"
+lvim.keys.normal_mode["tgh"] = ":BufferLineGoToBuffer 1<CR>"
+lvim.keys.normal_mode["tgj"] = ":BufferLineGoToBuffer 2<CR>"
+lvim.keys.normal_mode["tgk"] = ":BufferLineGoToBuffer 3<CR>"
+lvim.keys.normal_mode["tgl"] = ":BufferLineGoToBuffer 4<CR>"
 
 -- Move line
 -- lvim.keys.normal_mode["<C-j>"] = ":m .+1<CR>=="
