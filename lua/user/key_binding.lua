@@ -73,6 +73,7 @@ lvim.builtin.which_key.mappings["q"] = {
   name = "+Quit/Session",
   q = { "<cmd>lua require('user.functions').smart_quit('all')<CR>", "Quit Lvim" },
   Q = { ":qa!<CR>", "Quit Lvim with no save" },
+  s = { ":lua MiniSessions.read()<CR>", "Open session" },
 }
 
 -- Window

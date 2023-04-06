@@ -219,5 +219,12 @@ lvim.plugins = {
       require('neoclip').setup()
     end,
   },
-  { 'marko-cerovac/material.nvim' }
+  { 'marko-cerovac/material.nvim' },
+  {
+    'echasnovski/mini.sessions',
+    version = false,
+    config = function()
+      require('mini.sessions').setup()
+    end
+  },
 }
